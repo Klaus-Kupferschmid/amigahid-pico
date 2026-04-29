@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Pico 2 (RP2350)",
+            "includePath": [
+                "${workspaceFolder}/src/**",
+                "${workspaceFolder}/pico-sdk/src/**",
+                "${workspaceFolder}/pico-sdk/lib/tinyusb/src/**",
+                "${workspaceFolder}/build_pico2/generated/pico_base"
+            ],
+            "defines": [
+                "PICO_RP2350=1",
+                "PICO_BOARD=pico2",
+                "BOARD_HIDPICO_REV4",
+                "DEBUG_MESSAGES=1",
+                "CFG_TUSB_MCU=OPT_MCU_RP2040"
+            ],
+            "compilerPath": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/bin/arm-none-eabi-gcc.exe",
+            "cStandard": "c11",
+            "intelliSenseMode": "gcc-arm",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}

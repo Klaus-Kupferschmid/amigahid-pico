@@ -1,2 +1,10 @@
 /build
+/build_pico2/
 /.dccache
+
+# Firmware files (generated)
+*.uf2
+debugprobe*.uf2
+
+# IDE-specific (optional - can be tracked if needed)
+# .vscode/

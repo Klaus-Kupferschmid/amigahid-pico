@@ -1,0 +1,18 @@
+{
+    "cmake.configureOnOpen": false,
+    "cmake.configureArgs": [
+        "-DPICO_PLATFORM=rp2350",
+        "-DPICO_BOARD=pico2",
+        "-DBOARD_TYPE=BOARD_HIDPICO_REV4"
+    ],
+    "cmake.generator": "Ninja",
+    "cmake.buildDirectory": "${workspaceFolder}/build_pico2",
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "files.associations": {
+        "*.h": "c",
+        "tusb_config.h": "c"
+    },
+    "cortex-debug.openocdPath": "C:/Tools/openocd/openocd/bin/openocd.exe",
+    "probe-rs-debugger.debuggerExecutable": "C:/Users/KlausKupferschmid/.cargo/bin/probe-rs.exe"
+}

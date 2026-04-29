@@ -1,0 +1,78 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake Configure (Pico 2)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-S", ".",
+                "-B", "build_pico2",
+                "-G", "Ninja",
+                "-DPICO_PLATFORM=rp2350",
+                "-DPICO_BOARD=pico2",
+                "-DBOARD_TYPE=BOARD_HIDPICO_REV4",
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "-DPICO_DEOPTIMIZED_DEBUG=1"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build (Pico 2)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "build_pico2"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc",
+            "dependsOn": "CMake Configure (Pico 2)"
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "build_pico2",
+                "--target", "clean"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Rebuild",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "Remove-Item -Recurse -Force build_pico2 -ErrorAction SilentlyContinue; cmake -S . -B build_pico2 -G Ninja -DPICO_PLATFORM=rp2350 -DPICO_BOARD=pico2 -DBOARD_TYPE=BOARD_HIDPICO_REV4 -DCMAKE_BUILD_TYPE=Debug -DPICO_DEOPTIMIZED_DEBUG=1; cmake --build build_pico2"
+            ],
+            "group": "build",
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Flash UF2 (BOOTSEL mode)",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "$uf2 = Get-ChildItem -Path build_pico2/src -Filter '*.uf2' | Select-Object -First 1; if ($uf2) { $drive = Get-Volume | Where-Object { $_.FileSystemLabel -eq 'RP2350' -or $_.FileSystemLabel -eq 'RPI-RP2' } | Select-Object -First 1; if ($drive) { Copy-Item $uf2.FullName -Destination ($drive.DriveLetter + ':\\'); Write-Host ('Flashed: ' + $uf2.Name) } else { Write-Host 'Pico not in BOOTSEL mode (no RP2350/RPI-RP2 drive found)' } } else { Write-Host 'No .uf2 file found in build_pico2/src' }"
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "dependsOn": "Build (Pico 2)"
+        },
+        {
+            "label": "Debug Build (Pico 2)",
+            "type": "shell",
+            "command": "cmd",
+            "args": ["/c", "build-debug.cmd"],
+            "group": "build",
+            "problemMatcher": "$gcc"
+        }
+    ]
+}
