@@ -1,0 +1,95 @@
+Hinweis: Verarbeite Symbol "C1:Capacitor_SMD:C_0805_2012Metric".
+Hinweis: Verarbeite Symbol "C2:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C3:Capacitor_SMD:C_0805_2012Metric".
+Hinweis: Verarbeite Symbol "C4:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C5:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C6:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C7:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C8:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C9:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C10:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C11:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C12:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C13:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C14:Capacitor_SMD:C_0805_2012Metric".
+Hinweis: Verarbeite Symbol "C15:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C16:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C17:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C18:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C19:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C20:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C21:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C22:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "C23:Capacitor_SMD:C_0402_1005Metric".
+Hinweis: Verarbeite Symbol "D1:Diode_SMD:D_SOD-323".
+Hinweis: Verarbeite Symbol "D2:Diode_SMD:D_SOD-323".
+Hinweis: Verarbeite Symbol "D3:Diode_SMD:D_SOD-323".
+Hinweis: Verarbeite Symbol "F1:Fuse:Fuse_1206_3216Metric".
+Hinweis: Verarbeite Symbol "J1:Connector_USB:USB_A_Stewart_SS-52100-001_Horizontal".
+Hinweis: Verarbeite Symbol "J2:Connector_JST:JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical".
+Hinweis: Verarbeite Symbol "J3:Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical".
+Hinweis: Verarbeite Symbol "J4:Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical".
+Hinweis: Verarbeite Symbol "J5:Connector_JST:JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal".
+Hinweis: Verarbeite Symbol "R10:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "R9:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "J6:Connector_JST:JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal".
+Hinweis: Verarbeite Symbol "R7:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "R8:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "L1:Amiga-HID_rev1.0:L_pol_2016".
+Hinweis: Verarbeite Symbol "LED1:LED_SMD:LED_0603_1608Metric".
+Hinweis: Verarbeite Symbol "LED2:LED_SMD:LED_0603_1608Metric".
+Hinweis: Verarbeite Symbol "R1:Resistor_SMD:R_0603_1608Metric".
+Hinweis: Verarbeite Symbol "R2:Resistor_SMD:R_0603_1608Metric".
+Hinweis: Verarbeite Symbol "R3:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "R4:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "R5:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "R6:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "R11:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "SJ1:Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm".
+Hinweis: Verarbeite Symbol "SW1:Button_Switch_SMD:SW_Push_1P1T_NO_Vertical_Wuerth_434133025816".
+Hinweis: Verarbeite Symbol "SW2:Button_Switch_SMD:SW_Push_1P1T_NO_Vertical_Wuerth_434133025816".
+Hinweis: Verarbeite Symbol "TP1:TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm".
+Hinweis: Verarbeite Symbol "TP2:TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm".
+Hinweis: Verarbeite Symbol "Y1:Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm".
+Hinweis: Verarbeite Symbol "U1:Package_TO_SOT_SMD:SOT-23-6".
+Hinweis: Verarbeite Symbol "U2:Package_TO_SOT_SMD:SOT-223-3_TabPin2".
+Hinweis: Verarbeite Symbol "U3:Package_SO:SOIC-8_5.23x5.23mm_P1.27mm".
+Hinweis: Verarbeite Symbol "U4:Amiga-HID_rev1.0:RP2350-QFN-60-1EP_7x7_P0.4mm_EP3.4x3.4mm_ThermalVias".
+Hinweis: Verarbeite Symbol "U5:Package_SO:VSSOP-8_2.3x2mm_P0.5mm".
+SJ1 Pin 1 nach Net-(J3-Pin_2) verbunden.
+Schaltplanblatt SJ1 auf Stammblatt aktualisiert.
+SJ1 hinzugefügt (Footprint "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm").
+Referenzbezeichner REF** in SJ1 geändert.
+Footprint TP1 von "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm" in "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" geändert.
+TP1 Fertigungsattribut "Von Stückliste ausschließen" entfernt.
+Wert SJ1 von SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm in OLED_VCC_SEL geändert.
+Symbolverknüpfung SJ1 von  nach /b7d0e5cd-bd9e-49b5-a45f-2d61077211bc aktualisiert.
+TP2 Fertigungsattribut "Von Stückliste ausschließen" entfernt.
+SJ1 Felder aktualisiert.
+Blattname von SJ1 auf "Amiga-HID_rev1.0.kicad_sch" aktualisiert.
+SJ1 Footprint-Filter auf "SolderJumper*Bridged12*" aktualisiert.
+SJ1 Pin 2 nach +3V3 verbunden.
+SJ1 Pin 3 nach VSYS verbunden.
+U5 hinzugefügt (Footprint "Package_SO:VSSOP-8_2.3x2mm_P0.5mm").
+Referenzbezeichner REF** in U5 geändert.
+Wert U5 von VSSOP-8_2.3x2mm_P0.5mm in TXS0102DCUR geändert.
+Symbolverknüpfung U5 von  nach /b0000000-1000-4000-8000-000000000001 aktualisiert.
+Footprint TP2 von "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm" in "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" geändert.
+Schaltplanblatt U5 auf Stammblatt aktualisiert.
+Blattname von U5 auf "Amiga-HID_rev1.0.kicad_sch" aktualisiert.
+U5 Pin 6 nach /KB_CLOCK_5V verbunden.
+U5 Pin 2 nach /KB_DATA_3V3 verbunden.
+U5 Pin 7 nach /KB_DATA_5V verbunden.
+U5 Pin 5 nach +3V3 verbunden.
+U5 Pin 1 nach +3V3 verbunden.
+U5 Pin 8 nach VBUS verbunden.
+U5 Pin 4 nach GND verbunden.
+U5 Pin 3 nach /KB_CLOCK_3V3 verbunden.
+U5 Felder aktualisiert.
+Warnung: Kein Netz für Komponente J6 Pad MP gefunden (kein Pin MP in Symbol).
+Warnung: Kein Netz für Komponente J6 Pad MP gefunden (kein Pin MP in Symbol).
+Warnung: Kein Netz für Komponente J5 Pad MP gefunden (kein Pin MP in Symbol).
+Warnung: Kein Netz für Komponente J5 Pad MP gefunden (kein Pin MP in Symbol).
+
+
+Hinweis: Warnungen insgesamt: 4, Fehler insgesamt: 0.

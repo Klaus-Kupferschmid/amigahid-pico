@@ -14,6 +14,330 @@
 		(comment 3 "Flat schematic")
 	)
 	(lib_symbols
+		(symbol "Connector:Conn_01x06_Pin"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x06_Pin"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x06, script generated"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x06_Pin_1_1"
+				(polyline
+					(pts
+						(xy 1.27 -7.62) (xy 0.8636 -7.62)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -5.08) (xy 0.8636 -5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 0.8636 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0.8636 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.54) (xy 0.8636 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 5.08) (xy 0.8636 5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 0.8636 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(pin passive line
+					(at 5.08 5.08 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -5.08 180)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -7.62 180)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Connector:USB_A"
 			(pin_names
 				(offset 1.016)
@@ -951,7 +1275,7 @@
 					)
 				)
 			)
-			(property "Footprint" "Package_SO:VSSOP-8_2.4x2.0mm_P0.5mm"
+			(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5344,6 +5668,12 @@
 		(uuid "447fa49f-365c-4b0a-afea-6dae01672937")
 	)
 	(junction
+		(at 215.9 250.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4bb80316-1293-46ca-93f9-b2d34d46634c")
+	)
+	(junction
 		(at 231.14 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5416,6 +5746,12 @@
 		(uuid "8086f3f2-543f-4758-82a4-27eb204d0229")
 	)
 	(junction
+		(at 215.9 252.73)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "81ca0f33-87a7-434d-8909-1f54e118ac00")
+	)
+	(junction
 		(at 195.58 64.77)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5438,6 +5774,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8d13837f-1088-4e8f-9a29-54aaaaf5fdba")
+	)
+	(junction
+		(at 215.9 271.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8d8e4bf1-23ff-4866-9450-a82a22542add")
 	)
 	(junction
 		(at 300.99 64.77)
@@ -5492,6 +5834,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b151d32d-22e1-4589-a1cd-19e8c3a661da")
+	)
+	(junction
+		(at 215.9 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b3d22c0f-fc51-4889-ba31-c965d25b71b5")
+	)
+	(junction
+		(at 215.9 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b8f0ccaa-035d-4cee-a676-271a6f625be9")
 	)
 	(junction
 		(at 82.55 63.5)
@@ -5564,6 +5918,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e556f17e-c199-4fd9-acca-9a41e8d2a607")
+	)
+	(junction
+		(at 215.9 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f0c5842a-df15-4519-bff2-8d51f1399bf2")
 	)
 	(junction
 		(at 222.25 85.09)
@@ -5899,6 +6259,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 256.54) (xy 201.93 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a8fcd0d-7119-4cc2-9f73-4824b4a6217c")
+	)
+	(wire
+		(pts
 			(xy 266.7 66.04) (xy 266.7 64.77)
 		)
 		(stroke
@@ -5966,6 +6336,16 @@
 			(type default)
 		)
 		(uuid "20a5aa00-c308-4e77-902d-3a72f0806a9d")
+	)
+	(wire
+		(pts
+			(xy 201.93 250.19) (xy 215.9 250.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20fa5ae0-7f0c-4e47-ad20-c709d23601cc")
 	)
 	(wire
 		(pts
@@ -6116,6 +6496,16 @@
 			(type default)
 		)
 		(uuid "3162e5c3-67a4-4186-8d62-8deafc4fe6b5")
+	)
+	(wire
+		(pts
+			(xy 204.47 264.16) (xy 204.47 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3201deec-2428-48f6-8cad-0fe10cbcced9")
 	)
 	(wire
 		(pts
@@ -6596,6 +6986,16 @@
 			(type default)
 		)
 		(uuid "57d347e4-f637-46d3-9f75-5dede622e17a")
+	)
+	(wire
+		(pts
+			(xy 195.58 261.62) (xy 205.74 261.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58b0c130-bf3b-4aa0-b8e9-5f68eb074bca")
 	)
 	(wire
 		(pts
@@ -7089,6 +7489,16 @@
 	)
 	(wire
 		(pts
+			(xy 200.66 254) (xy 200.66 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8083319c-802b-4d35-b31c-7ad3f1949d23")
+	)
+	(wire
+		(pts
 			(xy 172.72 135.89) (xy 186.69 135.89)
 		)
 		(stroke
@@ -7166,6 +7576,16 @@
 			(type default)
 		)
 		(uuid "8692012b-360a-45ac-9772-3d7b87b3aaf9")
+	)
+	(wire
+		(pts
+			(xy 195.58 259.08) (xy 203.2 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86da5271-7534-4937-b311-54b9d6b78930")
 	)
 	(wire
 		(pts
@@ -7349,6 +7769,16 @@
 	)
 	(wire
 		(pts
+			(xy 204.47 264.16) (xy 195.58 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91daff7d-42f8-4955-b9de-c1aa1d80d141")
+	)
+	(wire
+		(pts
 			(xy 172.72 138.43) (xy 186.69 138.43)
 		)
 		(stroke
@@ -7516,6 +7946,16 @@
 			(type default)
 		)
 		(uuid "9ee33a3f-9a1a-4b04-917e-dd0be4f57cc1")
+	)
+	(wire
+		(pts
+			(xy 201.93 256.54) (xy 201.93 250.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fbb3f63-0ce1-4e57-812f-3046d74d7c7f")
 	)
 	(wire
 		(pts
@@ -7759,6 +8199,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 266.7) (xy 203.2 271.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b96da302-b6cd-47c2-ba38-16cbe46d600e")
+	)
+	(wire
+		(pts
 			(xy 269.24 99.06) (xy 283.21 99.06)
 		)
 		(stroke
@@ -7876,6 +8326,16 @@
 			(type default)
 		)
 		(uuid "c53e50b9-7eae-4f24-a66a-32568174f42b")
+	)
+	(wire
+		(pts
+			(xy 215.9 269.24) (xy 204.47 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c77aa22b-c62b-4e6a-a3bf-b21989037cd3")
 	)
 	(wire
 		(pts
@@ -8039,6 +8499,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 252.73) (xy 203.2 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d594d654-ff97-41da-a403-cac8b7099942")
+	)
+	(wire
+		(pts
 			(xy 114.3 45.72) (xy 114.3 48.26)
 		)
 		(stroke
@@ -8159,6 +8629,16 @@
 	)
 	(wire
 		(pts
+			(xy 215.9 271.78) (xy 203.2 271.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e36a9e0a-59c2-4e35-b3b9-ac822463cd28")
+	)
+	(wire
+		(pts
 			(xy 227.33 85.09) (xy 227.33 97.79)
 		)
 		(stroke
@@ -8196,6 +8676,26 @@
 			(type default)
 		)
 		(uuid "e6283999-15e0-48cf-9ab6-dfe65d31ca00")
+	)
+	(wire
+		(pts
+			(xy 205.74 261.62) (xy 205.74 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6b4ae26-164e-4682-8622-cab02e308d4c")
+	)
+	(wire
+		(pts
+			(xy 215.9 252.73) (xy 203.2 252.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e721c306-1384-46a7-ab10-900aeb643d4f")
 	)
 	(wire
 		(pts
@@ -8299,6 +8799,16 @@
 	)
 	(wire
 		(pts
+			(xy 200.66 247.65) (xy 215.9 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebf03fde-139b-4ab4-ad85-be9bd6485dc1")
+	)
+	(wire
+		(pts
 			(xy 72.39 78.74) (xy 73.66 78.74)
 		)
 		(stroke
@@ -8399,6 +8909,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 254) (xy 200.66 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f422c30d-1530-43f3-93f2-69bb42e51621")
+	)
+	(wire
+		(pts
 			(xy 134.62 243.84) (xy 134.62 245.11)
 		)
 		(stroke
@@ -8449,6 +8969,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 266.7) (xy 203.2 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f88e03c1-a3c0-4ed5-8d18-e9b85a2d07d4")
+	)
+	(wire
+		(pts
 			(xy 186.69 74.93) (xy 186.69 73.66)
 		)
 		(stroke
@@ -8496,6 +9026,16 @@
 			(type default)
 		)
 		(uuid "fdf2f6b4-efda-45ef-9cbb-4643ae1a7696")
+	)
+	(wire
+		(pts
+			(xy 215.9 266.7) (xy 205.74 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe1569d8-972e-4cbb-affc-d14e94242376")
 	)
 	(wire
 		(pts
@@ -8661,6 +9201,17 @@
 		)
 		(uuid "0014801d-eae5-44d3-8fe2-3efac6de30b1")
 	)
+	(label "USB_DP"
+		(at 283.21 99.06 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "02ff75c3-c38e-47e2-aee2-89d7eacbd925")
+	)
 	(label "USB_D-"
 		(at 39.37 86.36 180)
 		(fields_autoplaced yes)
@@ -8705,6 +9256,72 @@
 		)
 		(uuid "19743f36-e9a6-4e99-a337-4623b7a936ee")
 	)
+	(label "I2C1_SDA"
+		(at 265.43 120.65 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "19841331-2dfb-4512-8037-0c0541480f3a")
+	)
+	(label "UART_RX"
+		(at 265.43 118.11 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1bc542ec-027b-49d8-9a77-9418dfd24d62")
+	)
+	(label "LED2"
+		(at 368.3 49.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1e5a0da1-6afe-4499-ad4a-abb0b3395093")
+	)
+	(label "UART_RX"
+		(at 217.17 271.78 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "221438de-590f-4e13-92ff-de34e57a463f")
+	)
+	(label "KB_CLOCK_5V"
+		(at 57.15 30.48 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2c87475f-6ec8-4c02-a99c-edd3bbe6e8d5")
+	)
+	(label "UART_TX"
+		(at 22.86 138.43 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2ed14a35-4cc9-4d7a-ae90-4ad068a8fa89")
+	)
 	(label "QSPI_SD2"
 		(at 101.6 152.4 180)
 		(fields_autoplaced yes)
@@ -8726,6 +9343,17 @@
 			(justify left bottom)
 		)
 		(uuid "346bfcc9-6a4b-44e7-826f-b74db4e16e4d")
+	)
+	(label "UART_TX"
+		(at 265.43 115.57 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "45e602eb-e965-4a3e-98fb-02ef1f150d34")
 	)
 	(label "GPIO14"
 		(at 265.43 151.13 180)
@@ -8782,6 +9410,17 @@
 		)
 		(uuid "58739658-449f-4c3a-b66b-121630964125")
 	)
+	(label "SWCLK"
+		(at 172.72 180.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5a7291c4-75ad-4daf-9829-37581971c580")
+	)
 	(label "USB_D+"
 		(at 39.37 83.82 180)
 		(fields_autoplaced yes)
@@ -8792,6 +9431,61 @@
 			(justify right bottom)
 		)
 		(uuid "5c82347f-c75c-48e9-9c24-51f07f030d10")
+	)
+	(label "USB_DP"
+		(at 52.07 83.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "60e7edc4-7deb-4356-a942-d90779cd9194")
+	)
+	(label "LED1"
+		(at 265.43 179.07 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6e033011-f1e8-4aa4-beac-57688e11dec0")
+	)
+	(label "GP_RES1"
+		(at 114.3 269.24 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6e240cf6-7104-4a92-8fef-9cb314dfeacd")
+	)
+	(label "KB_DATA_5V"
+		(at 57.15 35.56 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "714e5b21-f9ed-4db3-92c3-757487e153e0")
+	)
+	(label "SWDIO"
+		(at 217.17 252.73 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "715121db-0a07-41cf-bfe0-ab411cd847e9")
 	)
 	(label "QSPI_SD3"
 		(at 101.6 154.94 180)
@@ -8869,6 +9563,28 @@
 			(justify right bottom)
 		)
 		(uuid "8c195964-076f-462a-98b3-afc24dcc929c")
+	)
+	(label "USB_DM"
+		(at 283.21 107.95 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9a225fb4-0bb6-4321-bdcc-17e5cfa7f105")
+	)
+	(label "GP_RES2"
+		(at 265.43 135.89 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9af2e8a9-9be8-43de-ac84-e8f8a1f92d7e")
 	)
 	(label "~{USB_BOOT}"
 		(at 148.59 127 0)
@@ -8980,6 +9696,28 @@
 		)
 		(uuid "b0000000-5000-4000-8000-000000000002")
 	)
+	(label "KB_DATA_5V"
+		(at 326.39 134.62 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b0000000-5002-4000-8000-000000000001")
+	)
+	(label "KB_CLOCK_5V"
+		(at 326.39 137.16 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b0000000-5002-4000-8000-000000000002")
+	)
 	(label "GPIO22"
 		(at 265.43 171.45 180)
 		(fields_autoplaced yes)
@@ -9001,6 +9739,17 @@
 			(justify left bottom)
 		)
 		(uuid "ba93453b-d2af-4b95-92d8-97b5c56c5422")
+	)
+	(label "LED1"
+		(at 368.3 35.56 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "bf66e5cc-db5e-45dc-b606-f1d148fa739f")
 	)
 	(label "QSPI_SCLK"
 		(at 172.72 142.24 0)
@@ -9035,6 +9784,17 @@
 		)
 		(uuid "c6e23b48-d450-4317-8534-696beef41fa5")
 	)
+	(label "SWCLK"
+		(at 217.17 247.65 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c8b3e90a-f2c8-4a1c-9c5d-2e871a13c002")
+	)
 	(label "GPIO17"
 		(at 265.43 158.75 180)
 		(fields_autoplaced yes)
@@ -9057,6 +9817,17 @@
 		)
 		(uuid "d0dce646-150e-41c4-9ce2-9addf6940c99")
 	)
+	(label "USB_DM"
+		(at 52.07 86.36 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d0df5503-19a7-4b28-ae9b-4f2edf7cd1df")
+	)
 	(label "GPIO28_ADC2"
 		(at 265.43 189.23 180)
 		(fields_autoplaced yes)
@@ -9078,6 +9849,17 @@
 			(justify right bottom)
 		)
 		(uuid "de116067-9f93-4340-a7dc-1e51083f4087")
+	)
+	(label "I2C1_SCL"
+		(at 265.43 123.19 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "deb955b2-50b9-4720-9e37-6a416e96081c")
 	)
 	(label "GPIO11"
 		(at 265.43 143.51 180)
@@ -9112,6 +9894,50 @@
 		)
 		(uuid "e7cb81b6-761a-4d6f-9d3c-7201e74d80e9")
 	)
+	(label "SWDIO"
+		(at 172.72 182.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "eb732122-ae95-4cb4-abb9-72245b5c659b")
+	)
+	(label "GP_RES1"
+		(at 265.43 133.35 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ebdafcfb-0531-4b00-a68b-e4fdc32a18d3")
+	)
+	(label "I2C1_SDA"
+		(at 114.3 254 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ecceeec3-35d6-4fc1-ae0d-010fcbab0406")
+	)
+	(label "GP_RES2"
+		(at 114.3 271.78 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "edd4f42e-f638-4f76-83e3-ac2736862da9")
+	)
 	(label "KB_CLOCK_3V3"
 		(at 265.43 130.81 180)
 		(fields_autoplaced yes)
@@ -9134,6 +9960,28 @@
 		)
 		(uuid "f6746e14-e9ca-4e5f-a48d-523da29da4a3")
 	)
+	(label "I2C1_SCL"
+		(at 114.3 251.46 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f78b96f7-51a6-47b3-8b09-53befaa723bd")
+	)
+	(label "UART_TX"
+		(at 217.17 266.7 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f7ef5da2-9047-4433-a871-86fdbbcf12e7")
+	)
 	(label "GPIO21"
 		(at 265.43 168.91 180)
 		(fields_autoplaced yes)
@@ -9144,6 +9992,17 @@
 			(justify right bottom)
 		)
 		(uuid "f85d4236-f75e-4cfc-9dd2-348bcb51c0ed")
+	)
+	(label "LED2"
+		(at 265.43 156.21 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f8b22cda-2286-4617-9b75-91e4f94b1119")
 	)
 	(label "QSPI_SD3"
 		(at 172.72 138.43 0)
@@ -9254,325 +10113,6 @@
 			)
 		)
 	)
-	(label "USB_DP"
-		(at 283.21 99.06 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "02ff75c3-c38e-47e2-aee2-89d7eacbd925")
-	)
-	(label "I2C1_SDA"
-		(at 265.43 120.65 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "19841331-2dfb-4512-8037-0c0541480f3a")
-	)
-	(label "UART_RX"
-		(at 265.43 118.11 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "1bc542ec-027b-49d8-9a77-9418dfd24d62")
-	)
-	(label "LED2"
-		(at 368.3 49.53 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1e5a0da1-6afe-4499-ad4a-abb0b3395093")
-	)
-	(label "UART_RX"
-		(at 217.17 271.78 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "221438de-590f-4e13-92ff-de34e57a463f")
-	)
-	(label "KB_CLOCK_5V"
-		(at 57.15 30.48 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "2c87475f-6ec8-4c02-a99c-edd3bbe6e8d5")
-	)
-	(label "UART_TX"
-		(at 22.86 138.43 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2ed14a35-4cc9-4d7a-ae90-4ad068a8fa89")
-	)
-	(label "UART_TX"
-		(at 265.43 115.57 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "45e602eb-e965-4a3e-98fb-02ef1f150d34")
-	)
-	(label "SWCLK"
-		(at 172.72 180.34 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5a7291c4-75ad-4daf-9829-37581971c580")
-	)
-	(label "USB_DP"
-		(at 52.07 83.82 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "60e7edc4-7deb-4356-a942-d90779cd9194")
-	)
-	(label "LED1"
-		(at 265.43 179.07 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "6e033011-f1e8-4aa4-beac-57688e11dec0")
-	)
-	(label "GP_RES1"
-		(at 114.3 269.24 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "6e240cf6-7104-4a92-8fef-9cb314dfeacd")
-	)
-	(label "KB_DATA_5V"
-		(at 57.15 35.56 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "714e5b21-f9ed-4db3-92c3-757487e153e0")
-	)
-	(label "SWDIO"
-		(at 217.17 252.73 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "715121db-0a07-41cf-bfe0-ab411cd847e9")
-	)
-	(label "USB_DM"
-		(at 283.21 107.95 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "9a225fb4-0bb6-4321-bdcc-17e5cfa7f105")
-	)
-	(label "GP_RES2"
-		(at 265.43 135.89 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "9af2e8a9-9be8-43de-ac84-e8f8a1f92d7e")
-	)
-	(label "KB_DATA_5V"
-		(at 326.39 134.62 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b0000000-5002-4000-8000-000000000001")
-	)
-	(label "KB_CLOCK_5V"
-		(at 326.39 137.16 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b0000000-5002-4000-8000-000000000002")
-	)
-	(label "LED1"
-		(at 368.3 35.56 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "bf66e5cc-db5e-45dc-b606-f1d148fa739f")
-	)
-	(label "SWCLK"
-		(at 217.17 247.65 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c8b3e90a-f2c8-4a1c-9c5d-2e871a13c002")
-	)
-	(label "USB_DM"
-		(at 52.07 86.36 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d0df5503-19a7-4b28-ae9b-4f2edf7cd1df")
-	)
-	(label "I2C1_SCL"
-		(at 265.43 123.19 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "deb955b2-50b9-4720-9e37-6a416e96081c")
-	)
-	(label "SWDIO"
-		(at 172.72 182.88 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "eb732122-ae95-4cb4-abb9-72245b5c659b")
-	)
-	(label "GP_RES1"
-		(at 265.43 133.35 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "ebdafcfb-0531-4b00-a68b-e4fdc32a18d3")
-	)
-	(label "I2C1_SDA"
-		(at 114.3 254 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ecceeec3-35d6-4fc1-ae0d-010fcbab0406")
-	)
-	(label "GP_RES2"
-		(at 114.3 271.78 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "edd4f42e-f638-4f76-83e3-ac2736862da9")
-	)
-	(label "I2C1_SCL"
-		(at 114.3 251.46 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f78b96f7-51a6-47b3-8b09-53befaa723bd")
-	)
-	(label "UART_TX"
-		(at 217.17 266.7 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f7ef5da2-9047-4433-a871-86fdbbcf12e7")
-	)
-	(label "LED2"
-		(at 265.43 156.21 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f8b22cda-2286-4617-9b75-91e4f94b1119")
-	)
 	(symbol
 		(lib_id "Memory_Flash:W25Q128JVS")
 		(at 72.39 149.86 0)
@@ -9656,12 +10196,6 @@
 					(unit 1)
 				)
 			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "U3")
-					(unit 1)
-				)
-			)
 		)
 	)
 	(symbol
@@ -9673,7 +10207,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005eda6c1c")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR021"
 			(at 72.39 125.73 0)
 			(effects
 				(font
@@ -9723,12 +10257,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR021")
 					(unit 1)
 				)
@@ -9744,7 +10272,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005eda75f4")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR022"
 			(at 72.39 167.64 0)
 			(effects
 				(font
@@ -9794,12 +10322,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR022")
 					(unit 1)
 				)
@@ -9815,7 +10337,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005edac067")
-		(property "Reference" "R1"
+		(property "Reference" "R5"
 			(at 58.928 130.9116 0)
 			(effects
 				(font
@@ -9869,12 +10391,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "R5")
 					(unit 1)
 				)
@@ -9890,7 +10406,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005edb1aa1")
-		(property "Reference" "C2"
+		(property "Reference" "C7"
 			(at 81.661 127.1016 0)
 			(effects
 				(font
@@ -9944,12 +10460,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C2")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C7")
 					(unit 1)
 				)
@@ -9965,7 +10475,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005edb5c1d")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR023"
 			(at 78.74 139.7 0)
 			(effects
 				(font
@@ -10015,12 +10525,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR06")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR023")
 					(unit 1)
 				)
@@ -10036,7 +10540,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005edc82df")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR034"
 			(at 218.44 208.28 0)
 			(effects
 				(font
@@ -10086,12 +10590,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR021")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR034")
 					(unit 1)
 				)
@@ -10107,7 +10605,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005ede0881")
-		(property "Reference" "R7"
+		(property "Reference" "R10"
 			(at 265.43 93.8022 90)
 			(effects
 				(font
@@ -10159,12 +10657,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "R7")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "R10")
 					(unit 1)
 				)
@@ -10180,7 +10672,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005ede1624")
-		(property "Reference" "R8"
+		(property "Reference" "R11"
 			(at 265.43 102.6922 90)
 			(effects
 				(font
@@ -10232,12 +10724,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "R8")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "R11")
 					(unit 1)
 				)
@@ -10253,7 +10739,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005eed9ba4")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR035"
 			(at 234.95 67.31 0)
 			(effects
 				(font
@@ -10303,12 +10789,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR022")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR035")
 					(unit 1)
 				)
@@ -10324,7 +10804,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005eeee897")
-		(property "Reference" "C12"
+		(property "Reference" "C15"
 			(at 246.761 68.6816 0)
 			(effects
 				(font
@@ -10378,12 +10858,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C12")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C15")
 					(unit 1)
 				)
@@ -10399,7 +10873,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005eef00bb")
-		(property "Reference" "C13"
+		(property "Reference" "C16"
 			(at 258.191 68.6816 0)
 			(effects
 				(font
@@ -10453,12 +10927,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C13")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C16")
 					(unit 1)
 				)
@@ -10474,7 +10942,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005eef0473")
-		(property "Reference" "C14"
+		(property "Reference" "C17"
 			(at 269.621 68.6816 0)
 			(effects
 				(font
@@ -10528,12 +10996,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C14")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C17")
 					(unit 1)
 				)
@@ -10549,7 +11011,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005eef0994")
-		(property "Reference" "C15"
+		(property "Reference" "C18"
 			(at 281.051 68.6816 0)
 			(effects
 				(font
@@ -10603,12 +11065,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C15")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C18")
 					(unit 1)
 				)
@@ -10624,7 +11080,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005eef89b3")
-		(property "Reference" "C16"
+		(property "Reference" "C19"
 			(at 292.481 68.6816 0)
 			(effects
 				(font
@@ -10678,12 +11134,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C16")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C19")
 					(unit 1)
 				)
@@ -10699,7 +11149,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005eef89bd")
-		(property "Reference" "C17"
+		(property "Reference" "C20"
 			(at 303.911 68.6816 0)
 			(effects
 				(font
@@ -10753,12 +11203,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C17")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C20")
 					(unit 1)
 				)
@@ -10774,7 +11218,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005f1af967")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR032"
 			(at 214.63 67.31 0)
 			(effects
 				(font
@@ -10824,12 +11268,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR027")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR032")
 					(unit 1)
 				)
@@ -10845,7 +11283,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005f1af96d")
-		(property "Reference" "C19"
+		(property "Reference" "C14"
 			(at 217.551 68.6816 0)
 			(effects
 				(font
@@ -10899,12 +11337,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C19")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C14")
 					(unit 1)
 				)
@@ -10920,7 +11352,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005f1af973")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR033"
 			(at 214.63 81.28 0)
 			(effects
 				(font
@@ -10968,12 +11400,6 @@
 			(uuid "e6848218-3972-4909-948d-3dfa5138e1bb")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR028")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR033")
@@ -11067,7 +11493,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "08c9fb50-bb86-43e9-b87c-3df8063952e8")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR024"
 			(at 128.27 95.25 0)
 			(effects
 				(font
@@ -11117,12 +11543,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR013")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR024")
 					(unit 1)
 				)
@@ -11138,7 +11558,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "100d8571-a9e8-4bae-8312-52aa7ac38044")
-		(property "Reference" "C11"
+		(property "Reference" "C13"
 			(at 189.611 68.6816 0)
 			(effects
 				(font
@@ -11192,12 +11612,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C11")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C13")
 					(unit 1)
 				)
@@ -11223,7 +11637,7 @@
 			)
 		)
 		(property "Value" "JST-SH-3 SWD"
-			(at 210.82 257.81 0)
+			(at 215.646 256.032 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11424,7 +11838,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1baf75ce-b576-4e5b-a968-eae4e1150743")
-		(property "Reference" "R4"
+		(property "Reference" "R7"
 			(at 140.97 163.6522 90)
 			(effects
 				(font
@@ -11476,12 +11890,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "R4")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "R7")
 					(unit 1)
 				)
@@ -11497,7 +11905,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1edc92ad-d830-4b08-8a90-9ea16203a7b4")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR028"
 			(at 148.59 148.59 0)
 			(effects
 				(font
@@ -11545,12 +11953,6 @@
 			(uuid "1ff516f2-60d6-4f8d-9d61-b0dd38345ed1")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR017")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR028")
@@ -11645,7 +12047,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "231de312-b033-4fd2-ad8c-1615ad6505b6")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR030"
 			(at 173.99 110.49 0)
 			(effects
 				(font
@@ -11695,12 +12097,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR019")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR030")
 					(unit 1)
 				)
@@ -11717,7 +12113,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2334dac1-24a8-407c-9ab4-5e67708d6020")
-		(property "Reference" "U1"
+		(property "Reference" "U4"
 			(at 220.6341 199.39 0)
 			(effects
 				(font
@@ -11948,12 +12344,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "U1")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "U4")
 					(unit 1)
 				)
@@ -11969,7 +12359,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "258c4816-45ff-4431-9120-72ed127013b5")
-		(property "Reference" "C18"
+		(property "Reference" "C22"
 			(at 315.341 68.6816 0)
 			(effects
 				(font
@@ -12021,12 +12411,6 @@
 			(uuid "8d1e4034-b7cb-47bc-8e52-d54bd1fd4754")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C18")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C22")
@@ -12109,7 +12493,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f67026c-4e6d-497e-a3fd-6ef9aa34e4e3")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR018"
 			(at 30.48 205.74 0)
 			(effects
 				(font
@@ -12157,12 +12541,6 @@
 			(uuid "e6575a1a-0f7e-4e73-a29c-277bbf1b31ab")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR07")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR018")
@@ -12231,12 +12609,6 @@
 			(uuid "60bc8042-9019-4595-8e44-d914b37edcf2")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "SW2")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "SW2")
@@ -12386,7 +12758,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "37eb5dab-37c7-4482-a799-a1218e73bc79")
-		(property "Reference" "R6"
+		(property "Reference" "R9"
 			(at 165.1 121.7422 90)
 			(effects
 				(font
@@ -12436,12 +12808,6 @@
 			(uuid "1382f040-8f42-468b-844d-b49ad74d69bf")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "R6")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "R9")
@@ -12656,7 +13022,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "434ffbb1-db57-45b1-93a7-fc8cb7dd4a13")
-		(property "Reference" "R5"
+		(property "Reference" "R8"
 			(at 161.3916 92.202 0)
 			(effects
 				(font
@@ -12708,12 +13074,6 @@
 			(uuid "a7321500-9d6f-45bb-81d9-c8ac4a9923cb")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "R5")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "R8")
@@ -12936,7 +13296,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4b798a4b-4293-4093-bc77-48f1c7e22f57")
-		(property "Reference" "C6"
+		(property "Reference" "C8"
 			(at 131.191 110.9253 0)
 			(effects
 				(font
@@ -12954,7 +13314,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Amiga-HID_rev1.0:C_0402_1005Metric_small_pads"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 129.2352 115.57 0)
 			(effects
 				(font
@@ -12988,12 +13348,6 @@
 			(uuid "43fefce5-5994-4a8f-9220-7997f4c5847e")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C6")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C8")
@@ -13077,7 +13431,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4f3dff55-7f23-49d9-bcbf-2ba170ce6efb")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR020"
 			(at 58.42 198.12 0)
 			(effects
 				(font
@@ -13125,12 +13479,6 @@
 			(uuid "3e0e91ea-36f6-40c1-8f44-6d91b99edeb6")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR012")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR020")
@@ -13352,7 +13700,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "59b2e36a-2d44-46bd-9766-eb99e2b3298c")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR029"
 			(at 163.83 83.82 0)
 			(effects
 				(font
@@ -13402,12 +13750,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR018")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR029")
 					(unit 1)
 				)
@@ -13423,7 +13765,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5fb29ec2-b54b-4ab0-9fdb-422f36113ce4")
-		(property "Reference" "C4"
+		(property "Reference" "C6"
 			(at 37.9984 199.771 0)
 			(effects
 				(font
@@ -13477,12 +13819,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C4")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C6")
 					(unit 1)
 				)
@@ -13499,7 +13835,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "62f1c18f-00cb-4fb5-9e37-9ec0fde46cb1")
-		(property "Reference" "C7"
+		(property "Reference" "C9"
 			(at 143.51 110.49 0)
 			(effects
 				(font
@@ -13517,7 +13853,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Amiga-HID_rev1.0:C_0402_1005Metric_small_pads"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 140.6652 115.57 0)
 			(effects
 				(font
@@ -13551,12 +13887,6 @@
 			(uuid "e5755079-589d-4625-82cd-942c22b1305c")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C7")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C9")
@@ -13871,7 +14201,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6e746af5-d799-41c4-b6c6-4419157f3afb")
-		(property "Reference" "C9"
+		(property "Reference" "C11"
 			(at 177.8 97.79 0)
 			(effects
 				(font
@@ -13923,12 +14253,6 @@
 			(uuid "1f1cb52c-8c20-449f-9897-96689c47410f")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C9")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C11")
@@ -14233,7 +14557,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "81701cb7-44d0-445b-99a5-4b9d9128e7b3")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR031"
 			(at 195.58 67.31 0)
 			(effects
 				(font
@@ -14283,13 +14607,87 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR020")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
-			(project "Amiga-HID_rev1.0"
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x06_Pin")
+		(at 190.5 259.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "87b5090c-db64-4515-abcb-fb7af1ef7e88")
+		(property "Reference" "J7"
+			(at 191.135 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x06_Pin"
+			(at 191.135 251.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x06_P1.27mm_Vertical"
+			(at 190.5 259.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 190.5 259.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x06, script generated"
+			(at 190.5 259.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "1b8b4661-f004-4ca7-8f5e-4b3ae083b3fb")
+		)
+		(pin "6"
+			(uuid "df381af3-69aa-4933-93fe-62e02b88d36a")
+		)
+		(pin "2"
+			(uuid "8e4d98fe-9282-4230-91b5-92db9bdae932")
+		)
+		(pin "5"
+			(uuid "4bf9f6c2-21af-4771-9e49-00b9cffdb1e8")
+		)
+		(pin "3"
+			(uuid "62223758-e653-4851-8efd-6f0cc7619a35")
+		)
+		(pin "1"
+			(uuid "434c0761-1cb5-4941-8f37-dc09fb55366c")
+		)
+		(instances
+			(project ""
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR031")
+					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -14369,7 +14767,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8ca2a8d7-b8ce-4ff0-8cdb-5cd6740618b5")
-		(property "Reference" "R2"
+		(property "Reference" "R6"
 			(at 69.85 191.5922 90)
 			(effects
 				(font
@@ -14419,12 +14817,6 @@
 			(uuid "689d9140-5ac3-4052-9a0a-33dffc5bac75")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "R2")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "R6")
@@ -14574,7 +14966,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9c77ddd7-0f01-4a10-8d25-561e0b821e2b")
-		(property "Reference" "C8"
+		(property "Reference" "C10"
 			(at 166.751 68.6816 0)
 			(effects
 				(font
@@ -14626,12 +15018,6 @@
 			(uuid "4f53e1dd-4b97-4b5e-92b2-366c76ba42ad")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C8")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C10")
@@ -14905,12 +15291,6 @@
 					(unit 1)
 				)
 			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "SW1")
-					(unit 1)
-				)
-			)
 		)
 	)
 	(symbol
@@ -15002,7 +15382,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "afc5815d-d894-4cd1-ba9b-a5ec9f40998e")
-		(property "Reference" "C10"
+		(property "Reference" "C12"
 			(at 178.181 68.6816 0)
 			(effects
 				(font
@@ -15056,12 +15436,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C10")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C12")
 					(unit 1)
 				)
@@ -15094,7 +15468,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_2.4x2.0mm_P0.5mm"
+		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
 			(at 314.96 137.16 0)
 			(effects
 				(font
@@ -15657,7 +16031,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_TrianglePad1.0x1.5mm"
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm"
 			(at 134.62 248.92 0)
 			(effects
 				(font
@@ -15867,7 +16241,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bfd7afff-d47f-4964-9ba8-8a091fc5e90a")
-		(property "Reference" "R10"
+		(property "Reference" "R4"
 			(at 35.6616 145.542 0)
 			(effects
 				(font
@@ -15919,12 +16293,6 @@
 			(uuid "2f0a4446-cd57-421a-afe9-d9356b7c8bb5")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "R10")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "R4")
@@ -16021,7 +16389,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c3bba709-ca2f-44d9-85d3-c0a520436e98")
-		(property "Reference" "R9"
+		(property "Reference" "R3"
 			(at 35.6616 136.652 0)
 			(effects
 				(font
@@ -16075,12 +16443,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "R9")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "R3")
 					(unit 1)
 				)
@@ -16096,7 +16458,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c515634f-0470-498d-b02e-ba4c3e353945")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR019"
 			(at 45.72 198.12 0)
 			(effects
 				(font
@@ -16146,12 +16508,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR09")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR019")
 					(unit 1)
 				)
@@ -16168,7 +16524,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d0516a11-f468-4102-8541-961bef0ebd4e")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR039"
 			(at 312.42 83.82 0)
 			(effects
 				(font
@@ -16216,12 +16572,6 @@
 			(uuid "abc3978f-cd78-4bce-964b-8ffdcac457ce")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR023")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR039")
@@ -16316,7 +16666,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3.3u"
+		(property "Value" "2.2u"
 			(at 156.21 113.03 0)
 			(effects
 				(font
@@ -16334,7 +16684,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/_C408237.html"
 			(at 154.94 111.76 0)
 			(effects
 				(font
@@ -16343,7 +16693,43 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power Inductor 2.2uH, 2.0x1.6mm (per Pico 2 reference design); 3.3uH (Sunlord MWSA201610H3R3MT, LCSC C408237) is a drop-in alternative if 2.2uH is unavailable"
+			(at 154.94 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C408232"
+			(at 154.94 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "MWSA201610H2R2MT"
+			(at 154.94 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Sunlord"
+			(at 154.94 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Alternate" "3.3uH: Sunlord MWSA201610H3R3MT (LCSC C408237) - same footprint, RP2350 SMPS tolerates +-50%"
 			(at 154.94 111.76 0)
 			(effects
 				(font
@@ -16359,12 +16745,6 @@
 			(uuid "300f922a-c2ce-4ea8-b6db-d66185bd0374")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "L1")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "L1")
@@ -16391,7 +16771,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ABM8-272-T3"
+		(property "Value" "12MHz_3225_8pF"
 			(at 45.72 184.15 90)
 			(effects
 				(font
@@ -16440,12 +16820,6 @@
 			(uuid "679a7751-79f4-4b8c-aaf7-10d5354ffe88")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "Y1")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "Y1")
@@ -16674,7 +17048,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f20187ba-bb64-46c4-87d8-045556e9b148")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR026"
 			(at 134.62 179.07 0)
 			(effects
 				(font
@@ -16722,12 +17096,6 @@
 			(uuid "6d11327f-eb19-423f-897b-a97bddd52bcc")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR015")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR026")
@@ -16812,7 +17180,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f7aabd07-68f2-4540-b540-450e8f5a22be")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR025"
 			(at 128.27 128.27 0)
 			(effects
 				(font
@@ -16862,12 +17230,6 @@
 		(instances
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR014")
-					(unit 1)
-				)
-			)
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR025")
 					(unit 1)
 				)
@@ -16883,7 +17245,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f8e6e3c5-d783-4f7e-9568-47a2863d5b1c")
-		(property "Reference" "C3"
+		(property "Reference" "C5"
 			(at 37.9984 189.611 0)
 			(effects
 				(font
@@ -16935,12 +17297,6 @@
 			(uuid "558f5a0a-35eb-42fa-ba24-6f3038deff6e")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "C3")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "C5")
@@ -17102,7 +17458,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fb69fa44-b79e-4f84-809a-72c7185d88f8")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR027"
 			(at 139.7 107.95 0)
 			(effects
 				(font
@@ -17150,12 +17506,6 @@
 			(uuid "fec4adaf-9659-4fd9-913f-d08d9b24a1d3")
 		)
 		(instances
-			(project "Amiga-HID_rev1.0"
-				(path "/a1b2c3d4-0000-4000-8000-000000000000"
-					(reference "#PWR016")
-					(unit 1)
-				)
-			)
 			(project "Amiga-HID_rev1.0"
 				(path "/a1b2c3d4-0000-4000-8000-000000000000"
 					(reference "#PWR027")
