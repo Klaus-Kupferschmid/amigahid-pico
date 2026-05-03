@@ -8,3 +8,24 @@ debugprobe*.uf2
 
 # IDE-specific (optional - can be tracked if needed)
 # .vscode/
+
+# KiCad auto-backups & temporary files
+*-backups/
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*.bak
+fp-info-cache
+~*.lck
+*.sch.lck
+
+# Reference material / vendor archives (not part of project)
+*Kicad archive.zip
+*Kicad archive/
+RP-006440-*/
+RP-006440-*.zip
+
+# KiCad ERC / generated reports
+ERC.rpt
+kicad-rev1/_*.txt
+kicad-rev1/_*.ps1
+kicad-rev1/_*.sexp
