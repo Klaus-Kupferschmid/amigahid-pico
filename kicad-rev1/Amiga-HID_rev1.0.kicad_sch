@@ -11813,7 +11813,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_SH_BM03B-SRSS-TB_1x03-1MP_P1.00mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal"
 			(at 210.82 250.19 0)
 			(effects
 				(font
@@ -12744,7 +12744,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_Vertical_Wuerth_434133025816"
+		(property "Footprint" "Amiga-HID_rev1.0:SW_SMD_Tact_4x3_4P_C139797"
 			(at 153.67 163.83 0)
 			(effects
 				(font
@@ -15420,7 +15420,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_Vertical_Wuerth_434133025816"
+		(property "Footprint" "Amiga-HID_rev1.0:SW_SMD_Tact_4x3_4P_C139797"
 			(at 143.51 134.62 0)
 			(effects
 				(font

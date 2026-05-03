@@ -210,7 +210,7 @@
 	(net 64 "/KB_DATA_3V3")
 	(net 65 "/GPIO24")
 	(net 66 "/GPIO23")
-	(footprint "Button_Switch_SMD:SW_Push_1P1T_NO_Vertical_Wuerth_434133025816"
+	(footprint "Amiga-HID_rev1.0:SW_SMD_Tact_4x3_4P_C139797"
 		(layer "F.Cu")
 		(uuid "064c69e5-ff50-4dc0-a81d-71d34a807a6a")
 		(at 168 140)
@@ -238,7 +238,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_Vertical_Wuerth_434133025816"
+		(property "Footprint" "Amiga-HID_rev1.0:SW_SMD_Tact_4x3_4P_C139797"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -530,7 +530,7 @@
 			(pintype "passive")
 			(uuid "3c083998-8740-42a8-95f6-e708057609e7")
 		)
-		(model "${KICAD8_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_1P1T_NO_Vertical_Wuerth_434133025816.wrl"
+		(model "${KIPRJMOD}/Amiga-HID_rev1.0.pretty/3d/C139797_TactSwitch_4x3.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -5292,15 +5292,15 @@
 			(pintype "passive")
 			(uuid "8ff319a5-c9bb-49e2-b953-325ff16d5a71")
 		)
-		(model "${KICAD7_3DMODEL_DIR}/Inductor_SMD.3dshapes/AOTA-B201610SR47MT.STEP"
+		(model "${KIPRJMOD}/Amiga-HID_rev1.0.pretty/3d/C1046_Sunlord_L_0805_2u2.wrl"
 			(offset
-				(xyz 0 0 0.5)
+				(xyz 0 0 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz -90 0 0)
+				(xyz 0 0 0)
 			)
 		)
 	)
@@ -6605,7 +6605,7 @@
 			(roundrect_rratio 0.208333)
 			(uuid "9b1b8ac5-8bbe-4fcd-90eb-5b7ef46aae47")
 		)
-		(model "${KICAD8_3DMODEL_DIR}/Connector_JST.3dshapes/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal.wrl"
+		(model "${KIPRJMOD}/Amiga-HID_rev1.0.pretty/3d/C160403_JST_SH_SM03B-SRSS-TB.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -12221,7 +12221,7 @@
 			(roundrect_rratio 0.208333)
 			(uuid "ab728de9-da76-443c-8eb9-50d6b23b82ef")
 		)
-		(model "${KICAD8_3DMODEL_DIR}/Connector_JST.3dshapes/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal.wrl"
+		(model "${KIPRJMOD}/Amiga-HID_rev1.0.pretty/3d/C160403_JST_SH_SM03B-SRSS-TB.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -12792,7 +12792,7 @@
 			(pintype "passive")
 			(uuid "c9b7891d-e0eb-4138-a4b4-3c5d98d3c192")
 		)
-		(model "${KICAD8_3DMODEL_DIR}/Connector_USB.3dshapes/USB_A_Stewart_SS-52100-001_Horizontal.wrl"
+		(model "${KIPRJMOD}/Amiga-HID_rev1.0.pretty/3d/C42614_USB-A-TH_JTJ.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -13471,7 +13471,7 @@
 			)
 		)
 	)
-	(footprint "Button_Switch_SMD:SW_Push_1P1T_NO_Vertical_Wuerth_434133025816"
+	(footprint "Amiga-HID_rev1.0:SW_SMD_Tact_4x3_4P_C139797"
 		(layer "F.Cu")
 		(uuid "cf6f65d0-c317-458d-b14b-18389e741604")
 		(at 168 147)
@@ -13499,7 +13499,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_Vertical_Wuerth_434133025816"
+		(property "Footprint" "Amiga-HID_rev1.0:SW_SMD_Tact_4x3_4P_C139797"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13791,7 +13791,7 @@
 			(pintype "passive")
 			(uuid "9a1816c9-6db5-4e72-86c3-07d5cdee6bed")
 		)
-		(model "${KICAD8_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_1P1T_NO_Vertical_Wuerth_434133025816.wrl"
+		(model "${KIPRJMOD}/Amiga-HID_rev1.0.pretty/3d/C139797_TactSwitch_4x3.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
