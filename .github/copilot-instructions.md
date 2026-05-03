@@ -4,15 +4,61 @@
 USB-HID Keyboard Adapter für Amiga 2000 basierend auf RP2350A (Pico 2).
 Konvertiert moderne USB-Tastaturen zu Amiga-kompatiblem Keyboard-Protokoll.
 
+## Arbeitsregeln für KI-Assistenten (persistent über alle Rechner/Chats/Modelle)
+
+### Synchron halten bei jeder HW-Änderung
+Folgende Dateien spiegeln dieselbe Wahrheit wider und müssen bei jeder Bauteil-/Pinning-/Footprint-Änderung **gemeinsam** aktualisiert werden:
+- [`kicad-rev1/_bom.csv`](../kicad-rev1/_bom.csv) — kanonische BOM, 4 Spalten: `Reference, Value, Footprint, LCSC`
+- `.github/copilot-instructions.md` (diese Datei) — REV5 GPIO-Mapping, kritische BOM, Debug-Pads, 3D-Modelle
+- `kicad-rev1/Amiga-HID_rev1.0.kicad_sch` — `Footprint`-Property pro Symbol muss zur BOM passen
+- `kicad-rev1/Amiga-HID_rev1.0.kicad_pcb` — eingebettete Footprints + 3D-Modell-Refs
+
+### Konventionen
+- **Project-local 3D-Modelle**: `kicad-rev1/Amiga-HID_rev1.0.pretty/3d/<LCSC>_<descr>.{step,wrl}`
+- **easyeda2kicad Quell-Cache**: `kicad-rev1/_easyeda_dl/<LCSC>.*` — nur tatsächlich eingebaute Teile aufbewahren, falsche Downloads sofort wegwerfen
+- **Offizielle KiCad-3D-Lib hat KEIN JST_SH/PH/XH** (nur JST_EH) → solche Stecker grundsätzlich projektlokal über easyeda2kicad ziehen, in `pretty/3d/` ablegen, im PCB per `${KIPRJMOD}/...`-Pfad referenzieren
+
+### PowerShell BOM-Falle (kritisch!)
+- **NIE** `Set-Content -Encoding UTF8` (schreibt UTF-8-BOM → KiCad-Parser scheitert lautlos, Datei wirkt "leer")
+- **Stattdessen** immer:
+  ```powershell
+  [System.IO.File]::WriteAllText($path, $content, (New-Object System.Text.UTF8Encoding($false)))
+  ```
+
+### Bestätigte LCSC-Mapping-Highlights (Stand REV5)
+| Bauteil | LCSC | Footprint/Hinweis |
+|---|---|---|
+| RP2350A | C42411118 | QFN-60 |
+| USB-A J1 | **C42614** | Jing JTJ THT recessed, JLCPCB Extended Part, Body überhängt N-Kante (kein Cutout) |
+| JST-SH 3pin J5+J6 | **C160403** | SM03B-SRSS-TB, side-entry SMD, identische Teile |
+| JST-XH-5A J2 | C157932 | B5B-XH-A vertical |
+| Schottky D1/D2/D3 | C181276 | PMEG2010AEH SOD-323 |
+| TXS0102 U5 | C53411 | VSSOP-8 Level-Shifter |
+| USBLC6-2SC6 U1 | C7480 | SOT-23-6 ESD |
+| AMS1117-3.3 U2 | C6186 | SOT-223 LDO |
+| Crystal 12 MHz Y1 | C9002 | 3225-4P |
+| Inductor 2.2µH L1 | **C1046** | L_pol_2016 (Sunlord 0805 chip inductor, JLCPCB Basic; ersetzt C408232 weil dort kein EasyEDA-3D verfügbar) |
+| Tact-Switch SW1/SW2 | **C139797** | SW_SMD_Tact_4x3_4P_C139797 (4,2×3,2 mm SMD vertical, kompakt; ersetzt teures Würth 434133025816) |
+| 100nF 0402 (×17) | C14663 | C2/C4/C7/C10/C13/C15-C23 |
+| 10µF 0805 (×2) | C19702 | C1/C14 |
+
 ## Hardware-Kontext
 
 ### Ziel-Hardware
 - **Test-Board**: Raspberry Pi Pico 2 (RP2350)
 - **Produktiv-MCU**: RP2350A (QFN-60, 7×7mm)
-- **Board-Abmessungen REV5**: **17 × 55 mm** (eigene PCB, passt in bestehendes Gehäuse)
-  - Kurze Seite (17 mm) Nord: **USB-A Buchse** (Host-Port für Tastatur)
-  - Kurze Seite (17 mm) Süd: **JST-XH-5A** (Verbindung zum Amiga / Front Panel)
-  - Lange Seite (55 mm) links: **Lötpads** für Debug & Display (siehe Debug-Pads)
+- **Board-Abmessungen REV5 / Amiga-HID rev1.0**: **20 × 55 mm** (eigene PCB, passt in bestehendes Gehäuse)
+  - Kurze Seite (20 mm) Nord: **USB-A Buchse** (Host-Port für Tastatur, recessed/edge-mount THT)
+  - Kurze Seite (20 mm) Süd: **JST-XH-5A** (Verbindung zum Amiga / Front Panel)
+  - Lange Seite (55 mm) links: **Lötpads / Connectors** für Debug & Display (siehe Debug-Pads)
+
+### KiCad-Projekt
+- **Aktuelles Quellprojekt**: `kicad-rev1/Amiga-HID_rev1.0.kicad_pro` (KiCad 8.0.6 → Migration auf KiCad 10.x in Vorbereitung)
+- **Veraltet** (nicht mehr pflegen): das alte `kicad/`-Verzeichnis (war Pico-Modul-Adapter-Design)
+- Projekt-lokale Footprints: `kicad-rev1/Amiga-HID_rev1.0.pretty/`
+- 3D-Modelle: einige projekt-lokal unter `…pretty/3d/` (USB-A C42614, JST-SH C160403 — letzteres weil offizielle KiCad-3D-Library für `Connector_JST` **nur** JST_EH abdeckt, nicht JST_SH/PH/XH), Rest aus `${KICAD8_3DMODEL_DIR}` (KiCad-Standard 3D-Library, separat installieren)
+- **Quell-Cache** projekt-lokaler Teile: `kicad-rev1/_easyeda_dl/` (via easyeda2kicad gezogen, nur eingebaute Teile aufbewahrt)
+- **Kanonische BOM**: [`kicad-rev1/_bom.csv`](../kicad-rev1/_bom.csv) (4 Spalten: Reference, Value, Footprint, LCSC)
 
 ### Bestehendes System
 - **Ultimate Front Panel**: Eigenes Board mit STM32F103CBT6 (BluePill)
@@ -29,18 +75,39 @@ Konvertiert moderne USB-Tastaturen zu Amiga-kompatiblem Keyboard-Protokoll.
 - J2 liefert nur 5V vom Amiga
 - **LDO erforderlich**: AMS1117-3.3 (SOT-223)
 
-## GPIO-Mapping (config.h REV4)
+## GPIO-Mapping
+
+### config.h REV4 (Test-Hardware: Pico 2 + Breadboard)
 
 | GPIO | Funktion | Verbindung |
 |------|----------|------------|
 | GP4 | KBD_AMIGA_RST | (nicht verwendet für Amiga 2000) |
-| GP5 | KBD_AMIGA_DAT | → TXS0102 → J2 KBDATA |
-| GP6 | KBD_AMIGA_CLK | → TXS0102 → J2 KBCLK |
+| GP5 | KBD_AMIGA_DAT | → TXS0108E → J2 KBDATA |
+| GP6 | KBD_AMIGA_CLK | → TXS0108E → J2 KBCLK |
 | GP2 | I2C1_SDA | SSD1309 Display |
 | GP3 | I2C1_SCL | SSD1309 Display |
 | GP0 | UART TX | Debug via YP-01A |
 | GP1 | UART RX | Debug via YP-01A |
 | GP25 | LED | Onboard LED (Pico 2) |
+
+### REV5 / Amiga-HID rev1.0 (Produktiv-PCB)
+
+| GPIO | Funktion        | Verbindung                                          |
+|------|-----------------|-----------------------------------------------------|
+| GP0  | UART_TX         | Debug-Bereich A (JST-SH UART Pin 1) → Pi Debug Probe RX |
+| GP1  | UART_RX         | Debug-Bereich A (JST-SH UART Pin 3) ← Pi Debug Probe TX |
+| GP2  | I2C1_SDA        | OLED SSD1309 (Debug-Bereich B Pad B4)               |
+| GP3  | I2C1_SCL        | OLED SSD1309 (Debug-Bereich B Pad B3)               |
+| GP4  | KBD_AMIGA_RST   | reserviert (am Amiga 2000 ungenutzt)                |
+| GP5  | KBD_AMIGA_DAT   | → TXS0102 → J2 Pin 3 (KB_DATA, 5 V)                 |
+| GP6  | KBD_AMIGA_CLK   | → TXS0102 → J2 Pin 5 (KB_CLOCK, 5 V)                |
+| GP7  | GP_RES1         | Reserve, herausgeführt auf Debug-Bereich B Pad B8   |
+| GP8  | GP_RES2         | Reserve, herausgeführt auf Debug-Bereich B Pad B9   |
+| GP16 | LED2 (Activity) | LED2 (USB-Aktivität), Tiny-Board-Konvention         |
+| GP25 | LED1 (Status)   | LED1 (Power/Status), Pico-Konvention                |
+| –    | USB D+/D-       | direkt an USB-A J1 (über USBLC6-2SC6 ESD-Schutz)    |
+| –    | SWCLK/SWDIO     | Debug-Bereich A (JST-SH SWD)                        |
+| –    | QSPI            | W25Q128JVS Flash (16 MB) – siehe BOM                |
 
 ## Build-Konfiguration
 
@@ -85,15 +152,19 @@ cmake --build build_pico2
 - **Tastatur**: Dell KB900 mit 2.4GHz USB-Dongle
 - Business-Tastatur → sollte Boot Protocol unterstützen
 
-## JLCPCB BOM (Produktiv-Board)
+## JLCPCB BOM (Produktiv-Board, Stand Amiga-HID rev1.0)
+
+> Kanonische BOM-Quelle: [`kicad-rev1/_bom.csv`](../kicad-rev1/_bom.csv) (aus dem Schaltplan generiert).
+> Tabelle hier ist die **Sicht auf die kritischen Teile mit JLCPCB-Bestellnummern**.
 
 ### Kritische Teile
-| Bauteil | LCSC# | Package |
-|---------|-------|---------|
-| RP2350A | C42411118 | QFN-60 |
-| AMS1117-3.3 | C6186 | SOT-223 |
-| W25Q16JVSSIQ (Flash) | C131024 | SOIC-8 |
-| JST-XH-5A | C157932 | - |
+| Bauteil                  | LCSC#       | Package                          | Hinweis                             |
+|--------------------------|-------------|----------------------------------|-------------------------------------|
+| RP2350A                  | C42411118   | QFN-60                           | MCU                                 |
+| W25Q128JVS (Flash 16 MB) | tbd         | SOIC-8                           | **Achtung**: Pico-2-Ref nutzt 2 MB; Vergrößerung bewusst |
+| AMS1117-3.3              | C6186       | SOT-223                          | LDO 5 V → 3,3 V                     |
+| JST-XH-5A (B5B-XH-A)     | C157932     | THT 2,5 mm                       | J2 → Amiga / Front Panel            |
+| **USB-A Buchse J1**      | **C42614**  | **THT recessed/edge-mount**      | Jing Extension 905-261A1011D10100, JLCPCB Extended Part; Body überhängt Nordkante (kein Edge.Cuts-Cutout nötig) |
 
 ## Bekannte Einschränkungen
 - Kein `reset_usb_boot()` im Code - BOOTSEL-Button nötig für Firmware-Updates
@@ -233,13 +304,14 @@ Direkt kompatibel mit dem **Raspberry Pi Debug Probe** und dessen mitgelieferten
 | A10| GND        | –     | –                | Masse-Pad / Post-Pad            |
 
 **Bestückungsoptionen Bereich A:**
-- **Variante 1 (Default)**: 2× JST-SH 3-Pin-Buchse (z.B. S3B-SH-A, top entry) auf Pads A2-A4 und A7-A9. Pads A1, A5-A6, A10 bleiben unbestückt oder als kleine THT-Lötaugen.
+- **Variante 1 (Default)**: 2× JST-SH 3-Pin-Buchse **SM03B-SRSS-TB** (LCSC C160403, side-entry/horizontal SMD) auf Pads A2-A4 und A7-A9. Pads A1, A5-A6, A10 bleiben unbestückt oder als kleine THT-Lötaugen.
 - **Variante 2 (Alternative)**: durchgehende **1×10 Stiftleiste im 1,0-mm-Raster** (z.B. JST-SH-kompatible Pin-Header) — ersetzt beide JST-SH-Buchsen. Alle 10 Pads werden bestückt.
 - **Niemals beide gleichzeitig** — JST-SH-Gehäuse blockieren mechanisch den Stiftleisten-Bereich.
 
 **Pad-Layout Hinweise**:
-- JST-SH-Pads als **SMD oder THT** je nach gewähltem Buchsentyp (S3B-SH-A = THT mit Locking Lever, BM03B-SRSS-TB = SMD)
+- Beide JST-SH-Buchsen sind **identisch** (SM03B-SRSS-TB, side-entry SMD) → nur **eine** Bestellnummer, weniger Bestückungsfehler
 - Füll-Pads (A1, A5, A6, A10) als **THT** mit ovalen Lötaugen für 1,0-mm-Stiftleiste
+- 3D-Modell: projektlokal in `Amiga-HID_rev1.0.pretty/3d/C160403_JST_SH_SM03B-SRSS-TB.{step,wrl}` (offizielle KiCad-3D-Library hat **kein** JST_SH-Modell, nur JST_EH)
 - Gesamtbreite Bereich A: 10 × 1,0 mm = **10 mm**
 
 #### Bereich B: OLED-Display + Reserve (2,54 mm Pitch, 9 Pads)
@@ -331,17 +403,21 @@ Der USB-Stecker selbst (USB-A) ist **nur ein mechanischer Anschluss** – Host/D
 **Hardware-Fallback**: Mini BOOTSEL-Taster auf der Platine (siehe oben), nur für den Notfall (defekte FW, Tastatur funktioniert nicht).
 
 ### REV5 BOM-Ergänzungen (zusätzlich zur bestehenden Tabelle)
-| Bauteil                          | LCSC#       | Package    | Funktion                                |
-|----------------------------------|-------------|------------|-----------------------------------------|
-| TXS0102DCUR                      | C53411      | VSSOP-8    | Level-Shifter KB_DATA/CLK               |
-| USBLC6-2SC6                      | C7480       | SOT-23-6   | USB ESD-Schutz (D+/D-)                  |
-| **PMEG2010AEH (3×)**             | **C181276** | **SOD-323**| **Power-OR Schottky (D1/D2/D3)**        |
-| PolyFuse 500 mA (z.B. mF-MSMF050)| tbd         | 1206       | Tastatur-VBUS Überstromschutz (mit D3)  |
-| 12 MHz Crystal (Pico 2 Ref)      | C9002       | 3225-4P    | Systemtakt                              |
-| LED 0603 (2× rot/grün)           | tbd         | 0603       | LED1 GP25, LED2 GP16                    |
-| R 1 kΩ (LED), 10 kΩ (Pullups)    | –           | 0402/0603  | passiv                                  |
-| Mini Tact-Switch BOOTSEL         | tbd         | SMD 3×4    | Hardware-Fallback BOOTSEL               |
-| USB-A Buchse (Through-Hole)      | tbd         | THT        | einzige USB-Buchse (Host + Service)     |
-| JST-XH-5A (B5B-XH-A)             | C157932     | THT 2,5 mm | Verbindung Amiga / Front Panel          |
-| **JST-SH 3-Pin (2×)**            | tbd         | 1,0 mm     | **Pi Debug Probe SWD + UART**           |
-| Lötjumper SJ (3-Pad)             | –           | SMD        | OLED VCC: Default 3V3, optional auf 5V  |
+| Bauteil                                     | LCSC#       | Package          | Funktion                                |
+|---------------------------------------------|-------------|------------------|-----------------------------------------|
+| TXS0102DCUR                                 | C53411      | VSSOP-8          | U5: Level-Shifter KB_DATA/CLK (3,3↔5 V) |
+| USBLC6-2SC6                                 | C7480       | SOT-23-6         | U1: USB ESD-Schutz (D+/D-)              |
+| **PMEG2010AEH (3×)** D1/D2/D3               | **C181276** | **SOD-323**      | Power-OR Schottky                       |
+| PolyFuse 500 mA F1 (z.B. mF-MSMF050)        | tbd         | 1206             | Tastatur-VBUS Überstromschutz (mit D3)  |
+| 12 MHz Crystal Y1                           | C9002       | 3225-4P          | Systemtakt                              |
+| LED 0603 (2×) – LED1 grün, LED2 gelb        | tbd         | 0603             | LED1 GP25 (Status), LED2 GP16 (Activity)|
+| R 1 kΩ (LED-Vorwiderstände, Pullups)        | –           | 0402/0603        | passiv                                  |
+| Tact-Switch SW1/SW2 (BOOTSEL + Reset)       | **C139797** | SMD vertical 4,2×3,2 mm, Pad-Pitch 4,2×2,14 mm | Hardware-Fallback BOOTSEL + Reset; kompakte günstige Alternative zu Würth 434133025816 |
+| **USB-A Buchse J1**                         | **C42614**  | THT recessed     | Jing Extension JTJ USB-AF-13            |
+| JST-XH-5A J2 (B5B-XH-A)                     | C157932     | THT 2,5 mm       | Verbindung Amiga / Front Panel          |
+| **JST-SH 3-Pin (2×)** J5/J6 (SM03B-SRSS-TB) | **C160403** | SMD, side-entry  | Pi Debug Probe SWD + UART (identische Teile) |
+| PinHeader 1×4 (J3) / 1×5 (J4)               | –           | 2,54 mm THT      | OLED I²C / Reserve (3V3+GP+GND+VSYS)    |
+| PinHeader 1×6 (J7)                          | –           | 1,27 mm THT      | zusätzlicher Reserve-Header (siehe Schema)|
+| Lötjumper SJ1 (3-Pad)                       | –           | SMD              | OLED VCC: Default 3V3, optional auf 5V  |
+| Induktivität L1 2,2 µH                      | **C1046**   | L_pol_2016 (0805) | Sunlord chip inductor, RP2350 SMPS (VREG_LX) |
+| Testpoints TP1/TP2                          | –           | THT 1,0 mm       | Mess-Pads                               |
