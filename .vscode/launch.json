@@ -2,11 +2,66 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Pico Debug (pyOCD)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build_pico2/src/amigahid-pico.elf",
+            "servertype": "pyocd",
+            "serverpath": "C:/Users/KlausKupferschmid/AppData/Local/Programs/Python/Python312/Scripts/pyocd.exe",
+            "targetId": "rp2350",
+            "interface": "swd",
+            "svdFile": "${workspaceFolder}/pico-sdk/src/rp2350/hardware_regs/rp2350.svd",
+            "runToEntryPoint": "main",
+            "preLaunchTask": "Build (Pico 2)",
+            "serverLaunchTimeout": 20000,
+            "showDevDebugOutput": "raw",
+            "serverArgs": ["-O", "enable_multicore_debug=false"],
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            }
+        },
+        {
+            "name": "Pico Debug (pyOCD external)",
+            "type": "cortex-debug",
+            "request": "attach",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build_pico2/src/amigahid-pico.elf",
+            "servertype": "external",
+            "gdbTarget": "localhost:3333",
+            "gdbPath": "arm-none-eabi-gdb",
+            "svdFile": "${workspaceFolder}/pico-sdk/src/rp2350/hardware_regs/rp2350.svd",
+            "showDevDebugOutput": "raw",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            }
+        },
+        {
+            "name": "Pico Debug (pyOCD - no flash)",
+            "type": "cortex-debug",
+            "request": "attach",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build_pico2/src/amigahid-pico.elf",
+            "servertype": "pyocd",
+            "serverpath": "C:/Users/KlausKupferschmid/AppData/Local/Programs/Python/Python312/Scripts/pyocd.exe",
+            "targetId": "rp2350",
+            "interface": "swd",
+            "svdFile": "${workspaceFolder}/pico-sdk/src/rp2350/hardware_regs/rp2350.svd",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            }
+        },
+        {
             "name": "Pico Debug (probe-rs)",
             "type": "probe-rs-debug",
             "request": "attach",
             "cwd": "${workspaceFolder}",
             "chip": "RP235x",
+            "wireProtocol": "Swd",
+            "speed": 4000,
             "runtimeExecutable": "C:/Users/KlausKupferschmid/.cargo/bin/probe-rs.exe",
             "coreConfigs": [
                 {
@@ -22,6 +77,8 @@
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "chip": "RP235x",
+            "wireProtocol": "Swd",
+            "speed": 4000,
             "runtimeExecutable": "C:/Users/KlausKupferschmid/.cargo/bin/probe-rs.exe",
             "flashingConfig": {
                 "flashingEnabled": true,
@@ -34,8 +91,28 @@
                     "programBinary": "${workspaceFolder}/build_pico2/src/amigahid-pico.elf",
                     "svdFile": "${workspaceFolder}/pico-sdk/src/rp2350/hardware_regs/rp2350.svd"
                 }
-            ],
-            "preLaunchTask": "Debug Build (Pico 2)"
+            ]
+        },
+        {
+            "name": "Pico Flash+Debug (no build)",
+            "type": "probe-rs-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "chip": "RP235x",
+            "wireProtocol": "Swd",
+            "speed": 4000,
+            "runtimeExecutable": "C:/Users/KlausKupferschmid/.cargo/bin/probe-rs.exe",
+            "flashingConfig": {
+                "flashingEnabled": true,
+                "resetAfterFlashing": true,
+                "haltAfterReset": true
+            },
+            "coreConfigs": [
+                {
+                    "programBinary": "${workspaceFolder}/build_pico2/src/amigahid-pico.elf",
+                    "svdFile": "${workspaceFolder}/pico-sdk/src/rp2350/hardware_regs/rp2350.svd"
+                }
+            ]
         },
         {
             "name": "Pico Debug (CMSIS-DAP/OpenOCD)",
@@ -55,6 +132,25 @@
             "svdFile": "${workspaceFolder}/pico-sdk/src/rp2350/hardware_regs/rp2350.svd",
             "runToEntryPoint": "main",
             "preLaunchTask": "Build (Pico 2)",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            }
+        },
+        {
+            "name": "Pico Debug (probe-rs GDB)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build_pico2/src/amigahid-pico.elf",
+            "servertype": "external",
+            "gdbTarget": "localhost:3333",
+            "gdbPath": "arm-none-eabi-gdb",
+            "svdFile": "${workspaceFolder}/pico-sdk/src/rp2350/hardware_regs/rp2350.svd",
+            "runToEntryPoint": "main",
+            "preLaunchCommands": [
+                "set mem inaccessible-by-default off"
+            ],
             "liveWatch": {
                 "enabled": true,
                 "samplesPerSecond": 4
