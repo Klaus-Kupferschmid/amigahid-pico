@@ -34,6 +34,7 @@ Folgende Dateien spiegeln dieselbe Wahrheit wider und müssen bei jeder Bauteil-
 | JST-XH-5A J2 | C157932 | B5B-XH-A vertical |
 | Schottky D1/D2/D3 | C181276 | PMEG2010AEH SOD-323 |
 | TXS0102 U5 | C53411 | VSSOP-8 Level-Shifter |
+| W25Q128JVS U3 | **C113767** | SOIC-8 5.3×5.3 mm P1.27, JLCPCB Basic, lokale Footprint-Kopie wegen Pad-Bug in Package_SO |
 | USBLC6-2SC6 U1 | C7480 | SOT-23-6 ESD |
 | AMS1117-3.3 U2 | C6186 | SOT-223 LDO |
 | Crystal 12 MHz Y1 | C9002 | 3225-4P |
@@ -161,7 +162,7 @@ cmake --build build_pico2
 | Bauteil                  | LCSC#       | Package                          | Hinweis                             |
 |--------------------------|-------------|----------------------------------|-------------------------------------|
 | RP2350A                  | C42411118   | QFN-60                           | MCU                                 |
-| W25Q128JVS (Flash 16 MB) | tbd         | SOIC-8                           | **Achtung**: Pico-2-Ref nutzt 2 MB; Vergrößerung bewusst |
+| W25Q128JVS (Flash 16 MB) | C113767     | SOIC-8 (5.3×5.3 mm, P1.27)       | **Achtung**: Pico-2-Ref nutzt 2 MB; Vergrößerung bewusst |
 | AMS1117-3.3              | C6186       | SOT-223                          | LDO 5 V → 3,3 V                     |
 | JST-XH-5A (B5B-XH-A)     | C157932     | THT 2,5 mm                       | J2 → Amiga / Front Panel            |
 | **USB-A Buchse J1**      | **C42614**  | **THT recessed/edge-mount**      | Jing Extension 905-261A1011D10100, JLCPCB Extended Part; Body überhängt Nordkante (kein Edge.Cuts-Cutout nötig) |
