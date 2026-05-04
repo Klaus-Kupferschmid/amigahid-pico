@@ -34,7 +34,7 @@ Folgende Dateien spiegeln dieselbe Wahrheit wider und müssen bei jeder Bauteil-
 | JST-XH-5A J2 | C157932 | B5B-XH-A vertical |
 | Schottky D1/D2/D3 | C181276 | PMEG2010AEH SOD-323 |
 | TXS0102 U5 | C53411 | VSSOP-8 Level-Shifter |
-| W25Q128JVS U3 | **C113767** | SOIC-8 5.3×5.3 mm P1.27, JLCPCB Basic, lokale Footprint-Kopie wegen Pad-Bug in Package_SO |
+| W25Q16JVSSIQ U3 | **C82317** | SOIC-8 5.3×5.3 mm P1.27, 2 MB QSPI Flash (ersetzt W25Q128JVS 16 MB — 2 MB reichen locker, Pico-2-Reference); bei RP2354A-Variante DNP |
 | USBLC6-2SC6 U1 | C7480 | SOT-23-6 ESD |
 | AMS1117-3.3 U2 | C6186 | SOT-223 LDO |
 | Crystal 12 MHz Y1 | C9002 | 3225-4P |
@@ -162,7 +162,7 @@ cmake --build build_pico2
 | Bauteil                  | LCSC#       | Package                          | Hinweis                             |
 |--------------------------|-------------|----------------------------------|-------------------------------------|
 | RP2350A                  | C42411118   | QFN-60                           | MCU                                 |
-| W25Q128JVS (Flash 16 MB) | C113767     | SOIC-8 (5.3×5.3 mm, P1.27)       | **Achtung**: Pico-2-Ref nutzt 2 MB; Vergrößerung bewusst |
+| W25Q16JVSSIQ (Flash 2 MB)| C82317      | SOIC-8 (5.3×5.3 mm, P1.27)       | Pico-2-Ref-konform; bei Bestückung mit RP2354A → **DNP** |
 | AMS1117-3.3              | C6186       | SOT-223                          | LDO 5 V → 3,3 V                     |
 | JST-XH-5A (B5B-XH-A)     | C157932     | THT 2,5 mm                       | J2 → Amiga / Front Panel            |
 | **USB-A Buchse J1**      | **C42614**  | **THT recessed/edge-mount**      | Jing Extension 905-261A1011D10100, JLCPCB Extended Part; Body überhängt Nordkante (kein Edge.Cuts-Cutout nötig) |
@@ -170,6 +170,89 @@ cmake --build build_pico2
 ## Bekannte Einschränkungen
 - Kein `reset_usb_boot()` im Code - BOOTSEL-Button nötig für Firmware-Updates
 - Amiga 2000 hat keinen KBRST-Pin - nur KBDATA und KBCLK werden benötigt
+
+## Schaltplan-Korrekturen REV5 (TODO im KiCad-Editor nachziehen!)
+
+Folgende Änderungen sind in der BOM bereits umgesetzt, müssen aber im Schaltplan/PCB **manuell nachgezogen** werden:
+
+### 1. R3 KOMPLETT ENTFERNEN (kritisch!)
+- **Position**: derzeit als Bridge zwischen UART_TX und QSPI_SS (Bus-Knoten mit R4/R5)
+- **Problem**: Bei Bestückung würde jeder UART-Print den Flash-CS togglen → Boot-/Flash-Crash
+- **Aktion**: R3-Symbol im Schaltplan löschen, Wire UART_TX direkt an JST-SH J6 Pin 1 ziehen
+- Footprint im PCB ebenfalls löschen oder unbenutzt lassen
+- BOM-Eintrag R3 ist bereits entfernt
+
+### 2. R5 = 10 kΩ bestücken (vorher DNF)
+- **Funktion**: QSPI_SS Pullup gegen +3V3 (Pico-2-Reference Pflicht)
+- Ohne Pullup: QSPI_SS floatet beim Boot → instabiler Boot-Modus, evtl. ungewolltes BOOTSEL
+- BOM bereits auf 10 kΩ / C25804 geändert
+- **Bei RP2354A-Variante (flashless)**: trotzdem bestückt lassen, schadet nicht
+
+### 3. R4 bleibt 0 Ω (unverändert)
+- Verbindet QSPI_SS-Label mit dem Mittel-Knoten (R4/R5)
+- 0 Ω = direkte Durchverbindung, im Pico-2-Ref so vorgesehen
+
+### 4. UART Serien-Widerstände NEU einfügen (Variante B, defensiv)
+Nach Entfernung von R3 sollen **zwei separate** Serien-Widerstände in den UART-Pfad:
+
+| Ref  | Wert | Position                              | Zweck                              |
+|------|------|---------------------------------------|------------------------------------|
+| R12  | 33 Ω | MCU GP0 → R12 → UART_TX → J6 Pin 1   | Serien-Termination/ESD-Schutz TX   |
+| R13  | 33 Ω | J6 Pin 3 → UART_RX → R13 → MCU GP1   | Serien-Termination/ESD-Schutz RX   |
+
+- Footprint: 0402, LCSC C25104 (33 Ω)
+- BOM-Einträge bereits angelegt
+- **NICHT** an den alten R3-Knoten (mit R4/R5) anschließen — R12 und R13 sind reine Inline-Serie zwischen MCU und JST-Header
+
+### 5. I²C Pullup-Pads R14/R15 als DNF vorsehen
+Das SSD1309-Modul M242-12864 hat bereits Onboard-Pullups, daher keine externen Pullups nötig. Trotzdem Pads für spätere Module vorsehen:
+
+| Ref  | Wert | Position                | Zweck                              |
+|------|------|-------------------------|------------------------------------|
+| R14  | DNF  | I2C1_SDA → +3V3 (4,7 kΩ Bestückungs-Option) | Optionaler Pullup falls anderes Modul ohne eigene Pullups |
+| R15  | DNF  | I2C1_SCL → +3V3 (4,7 kΩ Bestückungs-Option) | dito |
+
+- Footprint: 0402
+- Bestückungswert wenn nötig: 4,7 kΩ (Standard für 100–400 kHz I²C)
+- BOM hat R14/R15 als DNF eingetragen
+
+### Topologie-Skizze nach Korrektur
+
+```
+  +3V3
+    │
+    R5 (10kΩ)         ← NEU bestückt
+    │
+    ├─ R4 (0Ω) ── QSPI_SS ── U3 /CS
+    │
+    (R3 ENTFERNT)
+
+  MCU GP0 ──── R12 (33Ω) ──── UART_TX ──── J6 Pin 1   ← NEU
+  MCU GP1 ──── R13 (33Ω) ──── UART_RX ──── J6 Pin 3   ← NEU
+
+  +3V3 ── R14 (DNF) ── I2C1_SDA ── GP2   ← Pad reserviert
+  +3V3 ── R15 (DNF) ── I2C1_SCL ── GP3   ← Pad reserviert
+```
+
+## Bestückungsvarianten (eine PCB, zwei BOMs)
+Das Layout unterstützt beide MCU-Varianten ohne Änderung am Board:
+
+| Bauteil          | Variante A: RP2350A + ext. Flash | Variante B: RP2354A flashless |
+|------------------|----------------------------------|-------------------------------|
+| U4 (MCU)         | RP2350A (C42411118)              | **RP2354A** (pinkompatibel QFN-60) |
+| U3 (QSPI Flash)  | W25Q16JVSSIQ (C82317), 2 MB      | **DNP**                       |
+| C an U3 VCC      | 100 nF bestückt                  | **DNP**                       |
+| QSPI_SS Pullup   | bestückt (10 kΩ)                 | bestückt (schadet nicht, definierter Pegel) |
+| Rest             | identisch                        | identisch                     |
+
+**Layout-Regeln** (für beide Varianten gültig, daher schon im Default-Design erfüllt):
+- QSPI-Leitungen MCU↔U3 kurz halten (< 15 mm) — bei RP2354A einfach floatend, kein Problem
+- QSPI_SS Pullup 10 kΩ gegen 3V3 immer bestücken (definierter Pegel)
+- U3-Versorgung 100 nF nahe Pin 8 — wird in Variante B mit-DNP'd
+
+**Wann welche Variante**:
+- **Variante A (Default)**: RP2350A breit verfügbar, W25Q16 ~0,30 €. Wirtschaftlichster Standardfall.
+- **Variante B**: nur sinnvoll wenn RP2354A bei JLCPCB als Basic Part verfügbar wird oder wenn man absolut minimale BOM will. Spart 2 SMD-Bauteile, verteuert aber den MCU.
 
 ---
 
@@ -252,8 +335,8 @@ USB-Spec verlangt min. **4,4 V** für die Tastatur. Verlustbudget Amiga→Tastat
 ### Referenzdesign Pico 2 – übernommene Bauteile
 | Bauteil                      | Wert/Typ           | Funktion                          |
 |------------------------------|--------------------|-----------------------------------|
-| RP2350A                      | QFN-60             | MCU                               |
-| W25Q16JVSSIQ                 | 16 Mbit QSPI Flash | Boot/Programm-Flash               |
+| RP2350A (oder RP2354A)       | QFN-60             | MCU – pinkompatible Alternative RP2354A hat 2 MB Stacked Flash intern → U3 dann DNP |
+| W25Q16JVSSIQ                 | 16 Mbit QSPI Flash | Boot/Programm-Flash (entfällt bei RP2354A) |
 | AMS1117-3.3                  | SOT-223            | LDO 5 V → 3,3 V (≥ 800 mA)        |
 | Crystal 12 MHz               | XRCGB12M000F0Z00R0 | Systemtakt (lt. Pico 2 Schaltplan)|
 | Lastkondensatoren XTAL       | 2× 15 pF C0G       | Quartz-Beschaltung                |

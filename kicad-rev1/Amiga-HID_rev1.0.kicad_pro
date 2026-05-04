@@ -245,7 +245,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "1.0"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -697,16 +697,16 @@
       {
         "filename": "Amiga-HID_rev1.0.kicad_sch",
         "name": "Amiga-HID_rev1.0",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "a1b2c3d4-0000-4000-8000-000000000000"
       }
     ],
-    "used_designators": "",
+    "used_designators": "#PWR17,#PWR32-33",
     "variants": []
   },
   "sheets": [
     [
       "a1b2c3d4-0000-4000-8000-000000000000",
-      "Stammblatt"
+      "Amiga-HID_rev1.0"
     ]
   ],
   "text_variables": {
