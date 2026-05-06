@@ -40,8 +40,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 0.64,
-          "width": 0.54
+          "height": 0.875,
+          "width": 0.2
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -228,12 +228,16 @@
           "drill": 0.0
         },
         {
-          "diameter": 0.4,
-          "drill": 0.2
+          "diameter": 0.5,
+          "drill": 0.3
         },
         {
           "diameter": 0.6,
           "drill": 0.3
+        },
+        {
+          "diameter": 0.8,
+          "drill": 0.4
         }
       ],
       "zones_allow_external_fillets": false
@@ -700,7 +704,7 @@
         "uuid": "a1b2c3d4-0000-4000-8000-000000000000"
       }
     ],
-    "used_designators": "#PWR17,#PWR32-33",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [

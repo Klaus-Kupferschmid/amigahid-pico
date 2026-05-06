@@ -1,0 +1,82 @@
+(version 1)
+
+# =============================================================================
+# JLCPCB 4-Layer Standard Process Design Rules
+# Stand: 2024/2025 - JLCPCB Capability Page
+# Quelle: https://jlcpcb.com/capabilities/pcb-capabilities
+#
+# Ziel: Standard-Prozess (kein Aufpreis) bei 4-Layer FR-4, 1 oz Cu außen / 0,5 oz innen
+# =============================================================================
+
+# --- Mindest-Track-Width ---
+# JLCPCB 4L Standard: 5 mil = 0,127 mm (1 oz Cu außen)
+(rule "min_track_width"
+    (constraint track_width (min 0.127mm))
+    (condition "A.Type == 'track'"))
+
+# --- Mindest-Clearance Track-zu-Track / Track-zu-Pad ---
+# JLCPCB 4L Standard: 5 mil = 0,127 mm
+(rule "min_clearance_copper"
+    (constraint clearance (min 0.127mm))
+    (condition "A.Type == 'track' || A.Type == 'pad' || A.Type == 'via'"))
+
+# --- Vias: Standard-Prozess (kein Aufpreis) ---
+# Drill 0,3 mm / Diameter 0,5 mm = sicherer Sweet-Spot
+(rule "min_via_drill"
+    (constraint hole_size (min 0.3mm))
+    (condition "A.Type == 'via'"))
+
+(rule "min_via_diameter"
+    (constraint via_diameter (min 0.45mm))
+    (condition "A.Type == 'via'"))
+
+(rule "min_via_annular_ring"
+    (constraint annular_width (min 0.075mm))
+    (condition "A.Type == 'via'"))
+
+# --- Through-Hole Pads (THT) ---
+# Min Drill 0,3 mm, Annular Ring 0,25 mm pro Seite empfohlen
+(rule "min_tht_drill"
+    (constraint hole_size (min 0.3mm))
+    (condition "A.Type == 'pad' && A.Pad_Type == 'Through-hole'"))
+
+# --- Hole-to-Hole Abstand ---
+# JLCPCB Standard: 0,5 mm (mech. Drill)
+(rule "min_hole_to_hole"
+    (constraint hole_to_hole (min 0.5mm)))
+
+# --- Edge-Clearance: Kupfer zu Board-Outline ---
+# JLCPCB Standard: 0,3 mm (V-Cut), 0,2 mm (Routed)
+(rule "min_edge_clearance"
+    (constraint edge_clearance (min 0.3mm)))
+
+# --- Silkscreen ---
+# JLCPCB Min Silk Linienbreite: 0,15 mm, Texthöhe: 1,0 mm (besser 1,2 mm für Lesbarkeit)
+(rule "min_silk_text_thickness"
+    (constraint text_thickness (min 0.15mm))
+    (condition "A.Layer == 'F.Silkscreen' || A.Layer == 'B.Silkscreen'"))
+
+(rule "min_silk_text_height"
+    (constraint text_height (min 1.0mm))
+    (condition "A.Layer == 'F.Silkscreen' || A.Layer == 'B.Silkscreen'"))
+
+# --- Solder Mask ---
+# JLCPCB Min Solder Mask Bridge zwischen Pads: 0,1 mm (4 mil)
+(rule "min_solder_mask_sliver"
+    (constraint silk_clearance (min 0.1mm))
+    (condition "A.Layer == 'F.Mask' || A.Layer == 'B.Mask'"))
+
+# =============================================================================
+# Spezial-Regeln für dein REV5-Board
+# =============================================================================
+
+# --- USB D+/D- Differential Pair: enge Toleranz ---
+# Optional: striktere Clearance für USB-Signale (nur wenn Net-Class "USB" verwendet wird)
+# (rule "USB_diff_pair_clearance"
+#     (constraint clearance (min 0.15mm))
+#     (condition "A.NetClass == 'USB' && B.NetClass == 'USB'"))
+
+# --- Power-Tracks: dickere Mindest-Width ---
+# (rule "power_track_min_width"
+#     (constraint track_width (min 0.3mm))
+#     (condition "A.NetClass == 'Power'"))
