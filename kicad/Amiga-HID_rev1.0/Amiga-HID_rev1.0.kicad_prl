@@ -4,13 +4,7 @@
     "active_layer_preset": "",
     "auto_track_width": false,
     "hidden_netclasses": [],
-    "hidden_nets": [
-      "GND",
-      "VSYS",
-      "+3V3",
-      "VBUS",
-      "+1V1"
-    ],
+    "hidden_nets": [],
     "high_contrast_mode": 0,
     "net_color_mode": 1,
     "opacity": {
@@ -59,7 +53,7 @@
       "board_outline_area",
       "ly_points"
     ],
-    "visible_layers": "00000000_00000000_0ffffff5_f7555575",
+    "visible_layers": "00000000_00000000_0fffffff_ffffffff",
     "zone_display_mode": 0
   },
   "git": {
