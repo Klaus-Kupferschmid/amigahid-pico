@@ -25,23 +25,26 @@ Folgende Dateien spiegeln dieselbe Wahrheit wider und müssen bei jeder Bauteil-
   [System.IO.File]::WriteAllText($path, $content, (New-Object System.Text.UTF8Encoding($false)))
   ```
 
-### Bestätigte LCSC-Mapping-Highlights (Stand REV5)
+### Bestätigte LCSC-Mapping-Highlights (Stand REV5, JLCPCB-Sync 2025-05-11)
 | Bauteil | LCSC | Footprint/Hinweis |
 |---|---|---|
-| RP2350A | C42411118 | QFN-60 |
+| RP2350A U4 | C42411118 | QFN-60 |
 | USB-A J1 | **C42614** | Jing JTJ THT recessed, JLCPCB Extended Part, Body überhängt N-Kante (kein Cutout) |
 | JST-SH 3pin J5+J6 | **C160403** | SM03B-SRSS-TB, side-entry SMD, identische Teile |
-| JST-XH-5A J2 | C157932 | B5B-XH-A vertical |
-| Schottky D1/D2/D3 | C181276 | PMEG2010AEH SOD-323 |
-| TXS0102 U5 | C53411 | VSSOP-8 Level-Shifter |
-| W25Q16JVSSIQ U3 | **C82317** | SOIC-8 5.3×5.3 mm P1.27, 2 MB QSPI Flash (ersetzt W25Q128JVS 16 MB — 2 MB reichen locker, Pico-2-Reference); bei RP2354A-Variante DNP |
-| USBLC6-2SC6 U1 | C7480 | SOT-23-6 ESD |
-| AMS1117-3.3 U2 | C6186 | SOT-223 LDO |
-| Crystal 12 MHz Y1 | C9002 | 3225-4P |
-| Inductor 2.2µH L1 | **C1046** | L_pol_2016 (Sunlord 0805 chip inductor, JLCPCB Basic; ersetzt C408232 weil dort kein EasyEDA-3D verfügbar) |
-| Tact-Switch SW1/SW2 | **C139797** | SW_SMD_Tact_4x3_4P_C139797 (4,2×3,2 mm SMD vertical, kompakt; ersetzt teures Würth 434133025816) |
-| 100nF 0402 (×17) | C14663 | C2/C4/C7/C10/C13/C15-C23 |
-| 10µF 0805 (×2) | C19702 | C1/C14 |
+| JST-XH-5A J2 | **C7551124** | Korean Hroparts XH-5A vertical |
+| Schottky D1/D2/D3 | **C52287404** | MSKSEMI PMEG2010AEH-MS SOD-323 |
+| TXS0102 U5 | **C53434** | TXS0102DCUR VSSOP-8 Level-Shifter |
+| W25Q16JVSSIQ U3 | **C82317** | SOIC-8 5.3×5.3 mm P1.27, 2 MB QSPI Flash; bei RP2354A-Variante DNP |
+| USBLC6-2SC6 U1 | **C19170930** | ElecSuper USBLC6-2SC6Y-ES SOT-23-6 ESD |
+| AMS1117-3.3 U2 | **C2688239** | WPMtek AMS1117-3.3V SOT-223 LDO |
+| Crystal 12 MHz Y1 | **C3003246** | Interquip 12 MHz 18 pF 3225-4P |
+| Inductor 3.3µH L1 | **C42411119** | Abracon AOTA-B201610S3R3 shielded power inductor, L_pol_2016 |
+| Tact-Switch SW1/SW2 | **C139797** | SW_SMD_Tact_4x3_4P_C139797 (4,2×3,2 mm SMD vertical, kompakt) |
+| 100nF 0402 (×14) | **C161530** | C2/C4/C5/C11/C13-C23 |
+| 10µF 0805 C1 | **C89831** | YAGEO 10µF 0805 |
+| 22µF 0805 C3 | **C45783** | Samsung LDO-Ausgang |
+| 15pF 0402 C6/C7 | **C441742** | Murata C0G XTAL Load-Caps |
+| 4.7µF 0402 C8/C9/C10/C12 | **C368809** | Samsung MCU-Decoupling |
 
 ## Hardware-Kontext
 
@@ -163,8 +166,8 @@ cmake --build build_pico2
 |--------------------------|-------------|----------------------------------|-------------------------------------|
 | RP2350A                  | C42411118   | QFN-60                           | MCU                                 |
 | W25Q16JVSSIQ (Flash 2 MB)| C82317      | SOIC-8 (5.3×5.3 mm, P1.27)       | Pico-2-Ref-konform; bei Bestückung mit RP2354A → **DNP** |
-| AMS1117-3.3              | C6186       | SOT-223                          | LDO 5 V → 3,3 V                     |
-| JST-XH-5A (B5B-XH-A)     | C157932     | THT 2,5 mm                       | J2 → Amiga / Front Panel            |
+| AMS1117-3.3              | **C2688239**| SOT-223                          | LDO 5 V → 3,3 V (WPMtek)            |
+| JST-XH-5A (B5B-XH-A)     | **C7551124**| THT 2,5 mm                       | J2 → Amiga / Front Panel (Hroparts) |
 | **USB-A Buchse J1**      | **C42614**  | **THT recessed/edge-mount**      | Jing Extension 905-261A1011D10100, JLCPCB Extended Part; Body überhängt Nordkante (kein Edge.Cuts-Cutout nötig) |
 
 ## Bekannte Einschränkungen
@@ -200,7 +203,7 @@ Nach Entfernung von R3 sollen **zwei separate** Serien-Widerstände in den UART-
 | R12  | 33 Ω | MCU GP0 → R12 → UART_TX → J6 Pin 1   | Serien-Termination/ESD-Schutz TX   |
 | R13  | 33 Ω | J6 Pin 3 → UART_RX → R13 → MCU GP1   | Serien-Termination/ESD-Schutz RX   |
 
-- Footprint: 0402, LCSC C25104 (33 Ω)
+- Footprint: 0402, LCSC C25105 (33 Ω)
 - BOM-Einträge bereits angelegt
 - **NICHT** an den alten R3-Knoten (mit R4/R5) anschließen — R12 und R13 sind reine Inline-Serie zwischen MCU und JST-Header
 
@@ -319,7 +322,7 @@ Board-5V ──► AMS1117-3.3 ──► 3,3 V Rail (RP2350 + Logik)
 USB-Spec verlangt min. **4,4 V** für die Tastatur. Verlustbudget Amiga→Tastatur:
 - SS14 (Vf ≈ 0,3 V @ 100 mA) × 2 + PolyFuse (~0,05 V) = **0,65 V** → Tastatur sieht **4,35 V** ⚠️ unter Spec
 - PMEG2010AEH (Vf ≈ 0,2 V @ 100 mA) × 2 + PolyFuse (~0,05 V) = **0,45 V** → Tastatur sieht **4,55 V** ✓
-- → **PMEG2010AEH dringend empfohlen** (LCSC: C181276, ~0,06 €/Stück)
+- → **PMEG2010AEH dringend empfohlen** (LCSC: C52287404 MSKSEMI PMEG2010AEH-MS, ~0,06 €/Stück)
 
 **Vorteile dieser passiven Lösung:**
 - ✅ **MCU-Crash-sicher**: kein FW-Bug kann das Power-Routing beschädigen
@@ -489,19 +492,19 @@ Der USB-Stecker selbst (USB-A) ist **nur ein mechanischer Anschluss** – Host/D
 ### REV5 BOM-Ergänzungen (zusätzlich zur bestehenden Tabelle)
 | Bauteil                                     | LCSC#       | Package          | Funktion                                |
 |---------------------------------------------|-------------|------------------|-----------------------------------------|
-| TXS0102DCUR                                 | C53411      | VSSOP-8          | U5: Level-Shifter KB_DATA/CLK (3,3↔5 V) |
-| USBLC6-2SC6                                 | C7480       | SOT-23-6         | U1: USB ESD-Schutz (D+/D-)              |
-| **PMEG2010AEH (3×)** D1/D2/D3               | **C181276** | **SOD-323**      | Power-OR Schottky                       |
+| TXS0102DCUR                                 | **C53434**  | VSSOP-8          | U5: Level-Shifter KB_DATA/CLK (3,3↔5 V) |
+| USBLC6-2SC6                                 | **C19170930**| SOT-23-6        | U1: USB ESD-Schutz (D+/D-) ElecSuper    |
+| **PMEG2010AEH (3×)** D1/D2/D3               | **C52287404**| **SOD-323**     | Power-OR Schottky (MSKSEMI)              |
 | PolyFuse 500 mA F1 (z.B. mF-MSMF050)        | tbd         | 1206             | Tastatur-VBUS Überstromschutz (mit D3)  |
-| 12 MHz Crystal Y1                           | C9002       | 3225-4P          | Systemtakt                              |
+| 12 MHz Crystal Y1                           | **C3003246**| 3225-4P          | Systemtakt (Interquip 12 MHz 18 pF)     |
 | LED 0603 (2×) – LED1 grün, LED2 gelb        | tbd         | 0603             | LED1 GP25 (Status), LED2 GP16 (Activity)|
 | R 1 kΩ (LED-Vorwiderstände, Pullups)        | –           | 0402/0603        | passiv                                  |
 | Tact-Switch SW1/SW2 (BOOTSEL + Reset)       | **C139797** | SMD vertical 4,2×3,2 mm, Pad-Pitch 4,2×2,14 mm | Hardware-Fallback BOOTSEL + Reset; kompakte günstige Alternative zu Würth 434133025816 |
 | **USB-A Buchse J1**                         | **C42614**  | THT recessed     | Jing Extension JTJ USB-AF-13            |
-| JST-XH-5A J2 (B5B-XH-A)                     | C157932     | THT 2,5 mm       | Verbindung Amiga / Front Panel          |
+| JST-XH-5A J2 (B5B-XH-A)                     | **C7551124**| THT 2,5 mm       | Verbindung Amiga / Front Panel (Hroparts)|
 | **JST-SH 3-Pin (2×)** J5/J6 (SM03B-SRSS-TB) | **C160403** | SMD, side-entry  | Pi Debug Probe SWD + UART (identische Teile) |
 | PinHeader 1×4 (J3) / 1×5 (J4)               | –           | 2,54 mm THT      | OLED I²C / Reserve (3V3+GP+GND+VSYS)    |
 | PinHeader 1×6 (J7)                          | –           | 1,27 mm THT      | zusätzlicher Reserve-Header (siehe Schema)|
 | Lötjumper SJ1 (3-Pad)                       | –           | SMD              | OLED VCC: Default 3V3, optional auf 5V  |
-| Induktivität L1 2,2 µH                      | **C1046**   | L_pol_2016 (0805) | Sunlord chip inductor, RP2350 SMPS (VREG_LX) |
+| Induktivität L1 3,3 µH                      | **C42411119**| L_pol_2016 (0806)| Abracon AOTA-B201610S3R3 shielded power inductor, RP2350 SMPS (VREG_LX) |
 | Testpoints TP1/TP2                          | –           | THT 1,0 mm       | Mess-Pads                               |
