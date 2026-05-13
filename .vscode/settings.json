@@ -14,5 +14,6 @@
         "tusb_config.h": "c"
     },
     "cortex-debug.openocdPath": "C:/Tools/openocd/openocd/bin/openocd.exe",
-    "probe-rs-debugger.debuggerExecutable": "C:/Users/KlausKupferschmid/.cargo/bin/probe-rs.exe"
+    "probe-rs-debugger.debuggerExecutable": "C:/Users/KlausKupferschmid/.cargo/bin/probe-rs.exe",
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }

@@ -506,7 +506,7 @@
 				(pins "1" "2" "3" "4" "5")
 			)
 		)
-		(attr through_hole)
+		(attr through_hole dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.38 -1.38)
@@ -4433,7 +4433,7 @@
 				(pins "1" "2" "3")
 			)
 		)
-		(attr smd)
+		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.44 2.685)
@@ -5111,7 +5111,7 @@
 				(pins "1" "2" "3" "4" "5" "6")
 			)
 		)
-		(attr through_hole)
+		(attr through_hole dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
 			(start -1.55 -1.14)
@@ -5333,8 +5333,8 @@
 		)
 		(group ""
 			(uuid "c884bfbe-7456-40b0-a137-8092344c67f3")
-			(members "1294eb58-5bf1-4cdb-8d57-e9cb3379b50a" "16e16e35-5bfd-4e39-899b-c5df7f077605"
-				"5b865f07-00ba-4ab2-ad8e-c33416362b7e" "6fc0e83b-8270-4274-8df0-e296a5526d63"
+			(members "16e16e35-5bfd-4e39-899b-c5df7f077605" "5b865f07-00ba-4ab2-ad8e-c33416362b7e"
+				"642fef3d-2ab3-459d-9b14-86338ff36578" "6fc0e83b-8270-4274-8df0-e296a5526d63"
 				"7e9de818-1e13-420f-8e8f-457c9387bb25" "8bfc11f9-7801-4681-9db2-15a5b0f45a44"
 				"b0d4802d-8154-47c4-a507-d6726ecdf675" "cc2245b6-c518-449c-841d-525bf3d8b80b"
 				"ed8c5d70-b9a3-4207-aadd-38565eceaac2"
@@ -5603,7 +5603,7 @@
 				(pins "1" "6" "8" "4" "5" "2" "3" "7")
 			)
 		)
-		(attr smd)
+		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 2.725 2.725)
@@ -6667,7 +6667,7 @@
 				(pins "1" "2" "3" "4")
 			)
 		)
-		(attr through_hole)
+		(attr through_hole dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.38 -1.38)
@@ -6947,7 +6947,7 @@
 				(pins "1" "2" "3")
 			)
 		)
-		(attr smd)
+		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.44 2.685)
