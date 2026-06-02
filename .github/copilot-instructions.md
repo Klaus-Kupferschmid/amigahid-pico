@@ -37,7 +37,7 @@ Folgende Dateien spiegeln dieselbe Wahrheit wider und müssen bei jeder Bauteil-
 | W25Q16JVSSIQ U3 | **C82317** | SOIC-8 5.3×5.3 mm P1.27, 2 MB QSPI Flash; bei RP2354A-Variante DNP |
 | USBLC6-2SC6 U1 | **C19170930** | ElecSuper USBLC6-2SC6Y-ES SOT-23-6 ESD |
 | AMS1117-3.3 U2 | **C2688239** | WPMtek AMS1117-3.3V SOT-223 LDO |
-| Crystal 12 MHz Y1 | **C3003246** | Interquip 12 MHz 18 pF 3225-4P |
+| Crystal 12 MHz Y1 | **C20625731** | Abracon ABM8-272-T3 12 MHz 10 pF 50Ω 3225-4P (Raspberry Pi zertifiziert) |
 | Inductor 3.3µH L1 | **C42411119** | Abracon AOTA-B201610S3R3 shielded power inductor, L_pol_2016 |
 | Tact-Switch SW1/SW2 | **C139797** | SW_SMD_Tact_4x3_4P_C139797 (4,2×3,2 mm SMD vertical, kompakt) |
 | 100nF 0402 (×14) | **C161530** | C2/C4/C5/C11/C13-C23 |
@@ -355,7 +355,7 @@ USB-Spec verlangt min. **4,4 V** für die Tastatur. Verlustbudget Amiga→Tastat
 - **REV5 LED-Mapping**:
   - **LED1 (Power/Status)**: **GP25** – kompatibel mit Pico-Konvention, vom Code bereits genutzt
   - **LED2 (Activity / USB-Traffic)**: **GP16** – Tiny-Board-Konvention
-- LED-Typ: SMD 0603, mit Vorwiderstand (≈ 1 kΩ, ggf. 2,2 kΩ für niedrigere Helligkeit) gegen GND, Anode an GPIO
+- LED-Typ: SMD 0603, mit Vorwiderstand (**330Ω**, LCSC C23138) gegen GND, Anode an GPIO
 
 ### BOOTSEL-Taster (Hardware-Fallback)
 - **Mini SMD Tact-Switch** (z.B. 3×4 mm) auf der Platine
@@ -496,9 +496,9 @@ Der USB-Stecker selbst (USB-A) ist **nur ein mechanischer Anschluss** – Host/D
 | USBLC6-2SC6                                 | **C19170930**| SOT-23-6        | U1: USB ESD-Schutz (D+/D-) ElecSuper    |
 | **PMEG2010AEH (3×)** D1/D2/D3               | **C52287404**| **SOD-323**     | Power-OR Schottky (MSKSEMI)              |
 | PolyFuse 500 mA F1 (z.B. mF-MSMF050)        | tbd         | 1206             | Tastatur-VBUS Überstromschutz (mit D3)  |
-| 12 MHz Crystal Y1                           | **C3003246**| 3225-4P          | Systemtakt (Interquip 12 MHz 18 pF)     |
+| 12 MHz Crystal Y1                           | **C20625731**| 3225-4P          | Systemtakt (Abracon ABM8-272-T3 10 pF 50Ω, RP zertifiziert) |
 | LED 0603 (2×) – LED1 grün, LED2 gelb        | tbd         | 0603             | LED1 GP25 (Status), LED2 GP16 (Activity)|
-| R 1 kΩ (LED-Vorwiderstände, Pullups)        | –           | 0402/0603        | passiv                                  |
+| R 330Ω (LED-Vorwiderstände R1/R2)           | **C23138**  | 0603             | LED-Strom ca. 3,9 mA                    |
 | Tact-Switch SW1/SW2 (BOOTSEL + Reset)       | **C139797** | SMD vertical 4,2×3,2 mm, Pad-Pitch 4,2×2,14 mm | Hardware-Fallback BOOTSEL + Reset; kompakte günstige Alternative zu Würth 434133025816 |
 | **USB-A Buchse J1**                         | **C42614**  | THT recessed     | Jing Extension JTJ USB-AF-13            |
 | JST-XH-5A J2 (B5B-XH-A)                     | **C7551124**| THT 2,5 mm       | Verbindung Amiga / Front Panel (Hroparts)|

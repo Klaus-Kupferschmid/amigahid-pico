@@ -38,3 +38,4 @@ add_compile_definitions(${BOARD_TYPE})
 pico_sdk_init()
 
 add_subdirectory(src)
+add_subdirectory(test_leds)
