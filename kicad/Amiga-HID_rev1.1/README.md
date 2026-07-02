@@ -15,7 +15,7 @@
 
 ## Bill of Materials (Stand: Mai 2026)
 
-Kanonische BOM-Quelle: [`_bom.csv`](_bom.csv)
+Kanonische BOM-Quelle: [`production/bom.csv`](production/bom.csv)
 
 ### MCU & Flash
 
@@ -135,4 +135,4 @@ Passive dual-source switching (Amiga + PC USB):
 
 ## Tools
 
-- **sync_lcsc_to_sch.py**: Synchronisiert LCSC-Nummern aus `_bom.csv` in die Schematic
+- **sync_lcsc_to_sch.py**: Synchronisiert LCSC-Nummern aus `production/bom.csv` in die Schematic

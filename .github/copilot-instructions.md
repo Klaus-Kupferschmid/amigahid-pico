@@ -6,6 +6,12 @@ Konvertiert moderne USB-Tastaturen zu Amiga-kompatiblem Keyboard-Protokoll.
 
 ## Arbeitsregeln für KI-Assistenten (persistent über alle Rechner/Chats/Modelle)
 
+### KiCad ERC/DRC-Warnungen nur nach Freigabe ändern
+- ERC-/DRC-Warnungen oder -Fehler **nicht eigenmächtig bereinigen**.
+- Zuerst Ursache, betroffene Objekte/Dateien und mögliche Absicht erklären.
+- Erst nach ausdrücklicher Freigabe des Users Änderungen an Schaltplan, PCB, Footprints, Design-Regeln, Silkscreen, 3D-Modellen oder Produktionsdaten vornehmen.
+- Reine Prüfungen/Reports mit `kicad-cli` sind erlaubt; Reparaturen sind freigabepflichtig.
+
 ### Synchron halten bei jeder HW-Änderung
 Folgende Dateien spiegeln dieselbe Wahrheit wider und müssen bei jeder Bauteil-/Pinning-/Footprint-Änderung **gemeinsam** aktualisiert werden:
 - [`kicad-rev1/_bom.csv`](../kicad-rev1/_bom.csv) — kanonische BOM, 4 Spalten: `Reference, Value, Footprint, LCSC`
@@ -355,7 +361,7 @@ USB-Spec verlangt min. **4,4 V** für die Tastatur. Verlustbudget Amiga→Tastat
 - **REV5 LED-Mapping**:
   - **LED1 (Power/Status)**: **GP25** – kompatibel mit Pico-Konvention, vom Code bereits genutzt
   - **LED2 (Activity / USB-Traffic)**: **GP16** – Tiny-Board-Konvention
-- LED-Typ: SMD 0603, mit Vorwiderstand (**330Ω**, LCSC C23138) gegen GND, Anode an GPIO
+- LED-Typ: SMD 0603, mit Vorwiderstand (**1kΩ**, LCSC C21190) gegen GND, Anode an GPIO
 
 ### BOOTSEL-Taster (Hardware-Fallback)
 - **Mini SMD Tact-Switch** (z.B. 3×4 mm) auf der Platine
@@ -498,7 +504,7 @@ Der USB-Stecker selbst (USB-A) ist **nur ein mechanischer Anschluss** – Host/D
 | PolyFuse 500 mA F1 (z.B. mF-MSMF050)        | tbd         | 1206             | Tastatur-VBUS Überstromschutz (mit D3)  |
 | 12 MHz Crystal Y1                           | **C20625731**| 3225-4P          | Systemtakt (Abracon ABM8-272-T3 10 pF 50Ω, RP zertifiziert) |
 | LED 0603 (2×) – LED1 grün, LED2 gelb        | tbd         | 0603             | LED1 GP25 (Status), LED2 GP16 (Activity)|
-| R 330Ω (LED-Vorwiderstände R1/R2)           | **C23138**  | 0603             | LED-Strom ca. 3,9 mA                    |
+| R 1kΩ (LED-Vorwiderstände R1/R2)            | **C21190**  | 0603             | LED-Strom ca. 1,7 mA                    |
 | Tact-Switch SW1/SW2 (BOOTSEL + Reset)       | **C139797** | SMD vertical 4,2×3,2 mm, Pad-Pitch 4,2×2,14 mm | Hardware-Fallback BOOTSEL + Reset; kompakte günstige Alternative zu Würth 434133025816 |
 | **USB-A Buchse J1**                         | **C42614**  | THT recessed     | Jing Extension JTJ USB-AF-13            |
 | JST-XH-5A J2 (B5B-XH-A)                     | **C7551124**| THT 2,5 mm       | Verbindung Amiga / Front Panel (Hroparts)|

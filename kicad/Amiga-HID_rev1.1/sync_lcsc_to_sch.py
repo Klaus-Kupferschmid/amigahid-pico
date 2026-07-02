@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Synchronize LCSC part numbers from _bom.csv into KiCad schematic.
+Synchronize LCSC part numbers from production/bom.csv into KiCad schematic.
 Reads BOM, finds each component in schematic, updates LCSC property.
 """
 import csv
 import re
 from pathlib import Path
 
-BOM_FILE = Path(__file__).parent / "_bom.csv"
-SCH_FILE = Path(__file__).parent / "Amiga-HID_rev1.0.kicad_sch"
+BOM_FILE = Path(__file__).parent / "production" / "bom.csv"
+SCH_FILE = Path(__file__).parent / "Amiga-HID_rev1.1.kicad_sch"
 
 def load_bom():
     """Load BOM and return dict: Designator -> JLCPCB Part #"""

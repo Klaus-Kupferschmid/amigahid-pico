@@ -10832,7 +10832,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "00000000-0000-0000-0000-00005eda5f2c")
 		(property "Reference" "U3"
 			(at 63.5 139.7 0)
@@ -12512,7 +12512,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "12e260f0-a94f-4f7c-8770-ff3d1941e645")
 		(property "Reference" "J5"
 			(at 210.82 242.57 0)
@@ -12606,7 +12606,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "154550b7-1afd-4e67-9284-407f04468af5")
 		(property "Reference" "J3"
 			(at 107.95 246.38 0)
@@ -13565,7 +13565,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "258c4816-45ff-4431-9120-72ed127013b5")
 		(property "Reference" "C21"
 			(at 315.341 68.6816 0)
@@ -14567,7 +14567,7 @@
 				)
 			)
 		)
-		(property "Value" "330"
+		(property "Value" "1k"
 			(at 373.38 31.75 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14610,7 +14610,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C23138"
+		(property "LCSC" "C21190"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -14906,7 +14906,7 @@
 				)
 			)
 		)
-		(property "Value" "330"
+		(property "Value" "1k"
 			(at 373.38 45.72 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14949,7 +14949,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C23138"
+		(property "LCSC" "C21190"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -15062,7 +15062,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "534cb6d3-0db4-4524-a691-30b59414d2c1")
 		(property "Reference" "J6"
 			(at 210.82 261.62 0)
@@ -16466,7 +16466,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "87b5090c-db64-4515-abcb-fb7af1ef7e88")
 		(property "Reference" "J7"
@@ -19865,7 +19865,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "fb328791-fdaf-4093-be48-998b710e115f")
 		(property "Reference" "J4"
 			(at 107.95 261.62 0)
