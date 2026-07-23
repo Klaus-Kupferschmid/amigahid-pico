@@ -16,5 +16,15 @@
     "cortex-debug.openocdPath": "C:/Tools/openocd/openocd/bin/openocd.exe",
     "probe-rs-debugger.debuggerExecutable": "C:/Users/KlausKupferschmid/.cargo/bin/probe-rs.exe",
     "python-envs.defaultEnvManager": "ms-python.python:system",
-    "git.ignoreSubmodules": true
+    "git.ignoreSubmodules": true,
+    "git.autoRepositoryDetection": false,
+    "git.ignoredRepositories": [
+        "C:/Scripts/RP2040/amigahid-pico/pico-sdk",
+        "C:/Scripts/RP2040/amigahid-pico/pico-sdk/lib/tinyusb",
+        "C:/Scripts/RP2040/amigahid-pico/pico-sdk/lib/cyw43-driver",
+        "C:/Scripts/RP2040/amigahid-pico/pico-sdk/lib/lwip",
+        "C:/Scripts/RP2040/amigahid-pico/pico-sdk/lib/mbedtls",
+        "C:/Scripts/RP2040/amigahid-pico/pico-sdk/lib/btstack",
+        "C:/Scripts/RP2040/amigahid-pico/pico-sdk/lib/mbedtls/framework"
+    ]
 }
