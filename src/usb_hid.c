@@ -15,6 +15,7 @@
 // these reside within the tinyusb sdk and are not part of this project source
 #include "bsp/board.h"
 #include "tusb.h"
+#include "pico/bootrom.h"
 
 // other includes
 #include <stdint.h>
@@ -23,6 +24,7 @@
 #include "platform/amiga/keyboard_serial_io.h"  // amiga only, for now, until i get hold of an ST :D
 #include "platform/amiga/keyboard.h"
 #include "platform/amiga/quad_mouse.h"
+#include "util/led_status.h"
 #include "util/output.h"
 #include "util/debug_cons.h"
 
@@ -82,6 +84,11 @@ void tuh_hid_mount_cb(uint8_t dev_addr, uint8_t instance, uint8_t const *desc_re
 
     dbgcons_plug(hid_protocol_type[hid_protocol]);
 
+    // Turn on status LED when keyboard is connected
+    if (hid_protocol == HID_ITF_PROTOCOL_KEYBOARD) {
+        led_status_on();
+    }
+
     // this part doesn't entirely make sense to me; hid devices come in two modes, boot protocol and report;
     // as i understand it, boot proto is intended for simplistic software such as bios which don't want to
     // implement a full stack. so if we're not in boot proto mode, display... something?
@@ -107,6 +114,11 @@ void tuh_hid_umount_cb(uint8_t dev_addr, uint8_t instance)
     uint8_t hid_protocol = tuh_hid_interface_protocol(dev_addr, instance);
 
     dbgcons_unplug(hid_protocol_type[hid_protocol]);
+
+    // Turn off status LED when keyboard is disconnected
+    if (hid_protocol == HID_ITF_PROTOCOL_KEYBOARD) {
+        led_status_off();
+    }
 }
 
 /**
@@ -120,6 +132,9 @@ void tuh_hid_umount_cb(uint8_t dev_addr, uint8_t instance)
 void tuh_hid_report_received_cb(uint8_t dev_addr, uint8_t instance, uint8_t const *report, uint16_t len)
 {
     uint8_t const hid_protocol = tuh_hid_interface_protocol(dev_addr, instance);
+
+    // Blink activity LED on any HID report
+    led_activity_trigger();
 
     switch (hid_protocol) {
         case HID_ITF_PROTOCOL_KEYBOARD:
@@ -274,6 +289,19 @@ static void handle_event_keyboard(uint8_t dev_addr, uint8_t instance, hid_keyboa
     // keep hold of older key event reports; init empty keyboard report
     static hid_keyboard_report_t last_report = { 0, 0, {0} };
     uint8_t pos;
+
+    // Check for BOOTSEL shortcut: LCtrl + LShift + F10
+    // HID_KEY_F10 = 0x43, LCTRL = 0x01, LSHIFT = 0x02
+    if ((report->modifier & (KEYBOARD_MODIFIER_LEFTCTRL | KEYBOARD_MODIFIER_LEFTSHIFT)) == 
+        (KEYBOARD_MODIFIER_LEFTCTRL | KEYBOARD_MODIFIER_LEFTSHIFT)) {
+        for (pos = 0; pos < 6; pos++) {
+            if (report->keycode[pos] == HID_KEY_F10) {
+                // Trigger USB bootloader mode
+                reset_usb_boot(0, 0);
+                // Never returns
+            }
+        }
+    }
 
     // check to see if a keypress is a new keypress or in the last report
     for (pos = 0; pos < 6; pos++) {

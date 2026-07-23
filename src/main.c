@@ -17,6 +17,7 @@
 #include "platform/amiga/quad_mouse.h"
 #include "util/debug_cons.h"
 #include "util/output.h"
+#include "util/led_status.h"
 
 #include "config.h"
 #include "tusb_config.h"
@@ -29,6 +30,10 @@ int main(void)
 {
     // tinyusb board init; led, uart, button, usb
     board_init();
+
+    // initialize LED status indicators
+    led_status_init();
+    // LED1 will turn on when keyboard is connected (see usb_hid.c)
 
     // initialise the i2c controller and send the init sequence to the display
     disp_ssd_init();
@@ -52,6 +57,9 @@ int main(void)
 
         // amiga keyboard service routine
         amiga_service();
+
+        // LED activity timeout handling
+        led_status_task();
     }
 
     return 0;
