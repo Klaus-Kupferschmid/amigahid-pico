@@ -15,5 +15,6 @@
     },
     "cortex-debug.openocdPath": "C:/Tools/openocd/openocd/bin/openocd.exe",
     "probe-rs-debugger.debuggerExecutable": "C:/Users/KlausKupferschmid/.cargo/bin/probe-rs.exe",
-    "python-envs.defaultEnvManager": "ms-python.python:system"
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "git.ignoreSubmodules": true
 }
